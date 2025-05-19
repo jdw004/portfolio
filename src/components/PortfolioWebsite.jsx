@@ -324,7 +324,7 @@ const projects = [
       <main className="max-w-5xl mx-auto px-6 pt-24">
         {/* Home Section */}
         <section id="home" className="h-screen flex flex-col items-center justify-center">
-          <div className="text-left font-mono text-white text-7xl mb-8">
+          <div className="text-left font-mono text-white text-6xl mb-8">
             <pre className="whitespace-pre-wrap">
               {typingText}
               {showCursor && <span className="text-cyan-400">_</span>}
@@ -334,7 +334,7 @@ const projects = [
 
         {/* About Me Section - NEW SECTION */}
         <section id="about" className="py-24">
-          <h2 className="text-cyan-400 font-mono text-4xl mb-16">About Me</h2>
+          <h2 className="text-cyan-400 font-mono text-3xl mb-16">About Me</h2>
           
           <div className="grid grid-cols-12 gap-8">
             {/* Left side - Text */}
@@ -390,7 +390,7 @@ const projects = [
 
         {/* Experience Section */}
         <section id="experience" className="text-2xl py-24">
-          <h2 className="text-cyan-400 font-mono text-4xl mb-16">Work Experience</h2>
+          <h2 className="text-cyan-400 font-mono text-3xl mb-16">Work Experience</h2>
           
           <div className="grid grid-cols-12 gap-6 mx-auto max-w-5xl">
             {/* Experience Menu (Left Side) */}
@@ -431,7 +431,7 @@ const projects = [
                   }`}
                 >
                   <div className="mb-6">
-                    <h3 className="text-white text-3xl font-mono">
+                    <h3 className="text-white text-2xl font-mono">
                       {exp.position} @ 
                       <span className="text-cyan-400"> {exp.company}</span>
                     </h3>
@@ -454,15 +454,15 @@ const projects = [
 
         {/* Projects Section with fixed image container */}
         <section id="projects" className="py-24">
-          <h2 className="text-cyan-400 font-mono text-4xl mb-16">Projects</h2>
+          <h2 className="text-cyan-400 font-mono text-3xl mb-16">Projects</h2>
           {projects.map((project, index) => (
             <div key={index} className="mb-20">
               <h3 className="text-cyan-400 font-mono text-xl mb-6">
-                <span className="text-white text-3xl">{project.name}</span>
+                <span className="text-white text-2xl">{project.name}</span>
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* UPDATED: Image container with better sizing and object-fit properties */}
-                <div className="font-mono text-right md:text-left bg-gray-800 rounded-xl shadow-lg hover:shadow-cyan-400/20 transition-all duration-300 flex items-center justify-center h-72 w-full overflow-hidden">
+                <div className="font-mono text-right md:text-left bg-gray-800 rounded-xl shadow-lg hover:shadow-cyan-400/20 transition-all duration-300 flex items-center justify-center h-56 w-full overflow-hidden">
                   <img 
                     src={`/images/${project.name.toLowerCase().replace(' ', '-')}.png`} 
                     alt={`${project.name} interface`}
@@ -508,8 +508,8 @@ const projects = [
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="pt-12 pb-24 flex flex-col items-center">
-          <h2 className="text-cyan-400 font-mono text-4xl mb-16">Contact-Me</h2>
+        <section id="contact" className="pt-16 pb-24 flex flex-col items-center">
+          <h2 className="text-cyan-400 font-mono text-3xl mb-16">Contact-Me</h2>
           <div className="max-w-2xl mx-auto text-center">
             <p className="text-white font-mono mb-12">
             I'm exploring new opportunities, so my inbox is always open. 
