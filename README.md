@@ -10,6 +10,7 @@ A modern, responsive portfolio website made to showcase my projects, experience,
 - Social and contact links
 
 ## Live Demo
+Coming soon!
 <!-- [View Live](https://your-portfolio-demo-link.com) -->
 
 ## Technologies Used
