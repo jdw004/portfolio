@@ -63,7 +63,7 @@ const projects = [
   },
   {
     name: 'Lyric Vibe',
-    description: 'A project sentiment analysis project, fetching a user\'s spotify data and quantifying user music tastes on a numerical happy-to-sad scale.',
+    description: 'A sentiment analysis project, fetching a user\'s spotify data and quantifying user music taste on a numerical happy-to-sad scale.',
     details: 'Utilized NLTK LLM sentiment analysis to review song lyrics from user accounts, allowing us to recommend songs based on mood.',
     tags: ['Python', 'NLTK', 'pandas', 'Spotify API']
   }
@@ -367,19 +367,21 @@ const projects = [
             
             {/* Right side - Image */}
             <div className="col-span-5 flex justify-center items-center">
-              <div className="relative w-64 h-64 border-2 border-cyan-400 rounded-md">
-                <div className="absolute -top-4 -left-4 w-64 h-64 bg-cyan-400 bg-opacity-20 rounded-md transition-all duration-300 hover:translate-x-2 hover:translate-y-2">
-                  <img
-                    src="/images/profile.jpg"
-                    alt="John Welch"
-                    className="w-full h-full object-cover rounded-md grayscale hover:grayscale-0 transition-all duration-500"
-                    onError={(e) => {
-                      e.target.onerror = null;
-                      // Display a placeholder if image fails to load
-                      e.target.style.display = 'none';
-                      e.target.parentNode.innerHTML += '<div class="w-full h-full flex items-center justify-center text-cyan-400">JW</div>';
-                    }}
-                  />
+              <div className="relative w-72 h-72">
+                <div className="absolute -top-4 -left-4 w-72 h-72 bg-cyan-400 bg-opacity-20 rounded-md transition-all duration-300 hover:translate-x-2 hover:translate-y-2">
+                  <div className="relative w-full h-full overflow-hidden rounded-md">
+                    <img
+                      src="/images/profile.jpg"
+                      alt="John Welch"
+                      className="w-full h-full object-cover transition-all duration-500 hover:scale-105"
+                      loading="lazy"
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.style.display = 'none';
+                        e.target.parentNode.innerHTML += '<div class="w-full h-full flex items-center justify-center text-cyan-400 text-4xl font-bold">JW</div>';
+                      }}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -460,18 +462,24 @@ const projects = [
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* UPDATED: Image container with better sizing and object-fit properties */}
-                <div className="font-mono text-right md:text-left border border-gray-700 bg-gray-800 p-4 rounded-lg shadow-lg">
-                  <div className="w-full h-64 flex items-center justify-center">
-                    <img 
-                      src={`/images/${project.name.toLowerCase().replace(' ', '-')}.png`} 
-                      alt={`${project.name} interface`}
-                      className="max-w-full max-h-full object-contain" 
-                      onError={(e) => {
-                        e.target.onerror = null;
-                        e.target.src = '/images/placeholder-project.png'; // Fallback image
-                      }}
-                    />
-                  </div>
+                <div className="font-mono text-right md:text-left bg-gray-800 rounded-xl shadow-lg hover:shadow-cyan-400/20 transition-all duration-300 flex items-center justify-center h-72 w-full overflow-hidden">
+                  <img 
+                    src={`/images/${project.name.toLowerCase().replace(' ', '-')}.png`} 
+                    alt={`${project.name} interface`}
+                    className="max-w-full max-h-full object-contain mx-auto my-auto transition-transform duration-500 hover:scale-105" 
+                    loading="lazy"
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.style.display = 'none';
+                      e.target.parentNode.innerHTML += `
+                        <div class=\"w-full h-full flex items-center justify-center bg-gray-800\">
+                          <div class=\"text-cyan-400 text-xl font-mono\">
+                            ${project.name} Preview
+                          </div>
+                        </div>
+                      `;
+                    }}
+                  />
                 </div>
                 <div className="font-mono text-right">
                   <p className="text-white mb-6">{project.description}</p>
