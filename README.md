@@ -1,13 +1,64 @@
-# React + Vite
+# Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive portfolio website made to showcase my projects, experience, and skills. Built with React and Tailwind CSS for fast and sleek UI development.
 
-Currently, two official plugins are available:
+## Features
+- Clean, responsive design
+- Animated typing intro
+- About, Experience, Projects, and Contact sections
+- Project cards with image previews and tech tags
+- Social and contact links
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Live Demo
+<!-- [View Live](https://your-portfolio-demo-link.com) -->
 
-## Expanding the ESLint configuration
+## Technologies Used
+- **React** – UI library
+- **Tailwind CSS** – Utility-first CSS framework
+- **Vite** – Fast build tool
+- **Lucide React** – Icon library
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# portfolio
+## Getting Started
+
+### Prerequisites
+- Node.js (v16+ recommended)
+- npm or yarn
+
+### Installation
+```bash
+# Clone the repository
+https://github.com/jdw004/portfolio.git
+cd personal-portfolio
+
+# Install dependencies
+npm install
+# or
+yarn install
+
+# Start the development server
+npm run dev
+# or
+yarn dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) to view it in your browser.
+
+### Building for Production
+```bash
+npm run build
+# or
+yarn build
+```
+
+## Folder Structure
+```
+public/
+  images/           # Project and profile images
+src/
+  components/       # React components (main: portfoliowebsite.jsx)
+  App.jsx           # App entry
+  main.jsx          # React root
+  index.css         # Tailwind base styles
+README.md
+```
+
