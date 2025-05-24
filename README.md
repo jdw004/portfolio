@@ -24,24 +24,8 @@ A modern, responsive portfolio website made to showcase my projects, experience,
 - Node.js (v16+ recommended)
 - npm or yarn
 
-### Installation
-```bash
-# Clone the repository
-https://github.com/jdw004/portfolio.git
-cd personal-portfolio
 
-# Install dependencies
-npm install
-# or
-yarn install
-
-# Start the development server
-npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:5173](http://localhost:5173) to view it in your browser.
+Open [https://jdw004.github.io/portfolio/](https://jdw004.github.io/portfolio/) to view it in your browser.
 
 ### Building for Production
 ```bash
