@@ -1,18 +1,22 @@
 {
-  "name": "personal-portfolio",
+  "name": "portfolio",
+  "homepage": "https://jdw000.github.io/portfolio",
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "tailwind:build": "tailwindcss -i ./src/index.css -o ./dist/output.css --watch"
+    "tailwind:build": "tailwindcss -i ./src/index.css -o ./dist/output.css --watch",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "gh-pages": "^6.3.0",
     "postcss-cli": "^11.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
