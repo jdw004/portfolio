@@ -527,7 +527,7 @@ const projects = [
             <a href="https://github.com/wumphlett/willhumphlett" className="text-cyan-400 mx-1 hover:text-white transition-colors duration-300"> Will Humphlett</a> &
             <a href="https://github.com/jmurrah/personal-portfolio" className="text-cyan-400 mx-1 hover:text-white transition-colors duration-300"> Jacob Murrah</a>
             <div className="mt-2 text-center">
-              Source on <a href="https://github.com/jdw004/personal-portfolio" className="text-cyan-400 hover:text-white transition-colors duration-300">GitHub</a>
+              Source on <a href="https://github.com/jdw004/portfolio" className="text-cyan-400 hover:text-white transition-colors duration-300">GitHub</a>
             </div>
           </div>
         </section>
