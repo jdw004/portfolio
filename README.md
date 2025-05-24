@@ -10,8 +10,7 @@ A modern, responsive portfolio website made to showcase my projects, experience,
 - Social and contact links
 
 ## Live Demo
-Coming soon!
-<!-- [View Live](https://your-portfolio-demo-link.com) -->
+!-- [View Live](https://jdw004.github.io/portfolio/) --
 
 ## Technologies Used
 - **React** – UI library
