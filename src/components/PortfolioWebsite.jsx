@@ -1,75 +1,94 @@
+// Import necessary components and libraries from React and other packages.
 import React, { useState, useEffect, useRef, useLayoutEffect } from 'react';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail, Menu, X } from 'lucide-react';
 
+// Import project images.
+import marsMeteo from '/images/mars-meteo.png';
+import lyricVibe from '/images/lyric-vibe.png';
+
+// Define the main functional component for the portfolio website.
 const PortfolioWebsite = () => {
+  // State for the typing animation text.
   const [typingText, setTypingText] = useState('');
+  // State to control the visibility of the typing cursor.
   const [showCursor, setShowCursor] = useState(true);
+  // State to track the currently selected experience.
   const [currentExperience, setCurrentExperience] = useState(0);
+  // State to keep track of the active section in the viewport.
   const [activeSection, setActiveSection] = useState('');
+  // State for the position of the indicator in the experience section.
   const [indicatorPosition, setIndicatorPosition] = useState(0);
+  // State to manage the mobile menu's open/close status.
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // Ref to hold references to the experience menu items.
   const experienceMenuRefs = useRef([]);
 
-  const fullText = "Hey there, I'm\nJohn Welch\nI write code.";
+  // The full text to be displayed by the typing animation.
+  const fullText = `Hey there, I'm
+John Welch
+I write code.`;
   
-  // Updated experiences data
-const experiences = [
-  {
-    company: 'OCV, LLC',
-    position: 'Software Engineer Intern',
-    period: 'January 2025 - Present',
-    details: [
-      'Engineered user-friendly applications using SwiftUI, focusing on seamless UI/UX and efficient code architecture',
-      'Executed comprehensive testing using Xcode and Android Studio, ensuring high performance and compatibility across iOS and Android ecosystems'
-    ]
-  },
-  {
-    company: 'Auburn Human-Centered AI Lab',
-    position: 'Undergraduate Research Assistant',
-    period: 'August 2024 - December 2024',
-    details: [
-      'Researched jailbreak methods for large language models to understand how standard restrictions are bypassed',
-      'Examined safety procedures and the ethical consequences of security breaches in models'
-    ]
-  },
-  {
-    company: 'LPL Financial',
-    position: 'Software Engineer Intern',
-    period: 'June 2024 - August 2024',
-    details: [
-      'Developed AWS application deployment manager using Angular & Terraform, decreasing deployment time by 50%',
-      'Reduced application downtime by 30% by creating a load balancer utilizing blue-green deployment, easing release of updates to over 22,000 financial advisors',
-      'Automated push notifications for pending annual reviews using the Jira API, reducing meeting time by 14 hours for employees across technology governance in 2024'
-    ]
-  },
-  {
-    company: 'Welch Sneaks',
-    position: 'Founder',
-    period: 'August 2021 - May 2023',
-    details: [
-      'Successfully generated $40,000 in revenue through retail arbitrage tactics as sole proprietor',
-      'Developed an e-commerce platform utilizing React and Node.js to effectively display product, process orders, and handle customer relationships',
-      'Implemented an inventory management system to effectively manage daily orders by implementing API routes to query from MongoDB database and display it back to clients'
-    ]
-  }
-];
+  // Data for work experiences.
+  const experiences = [
+    {
+      company: 'LPL Financial',
+      position: 'Software Engineer Intern',
+      period: 'June 2024 - August 2024',
+      details: [
+        'Created .NET MCP server for GitHub Copilot and Jira, automating code generation for 10+ weekly user stories',
+        'Enhanced code generation by integrating Meta\'s Llama 4 to MCP via AWS Bedrock to support 2000+ developers',
+        'Implemented Jenkins CI/CD build pipeline using Docker, Bash, AWS Cloudformation alongside DevOps team'
+      ]
+    },
+    {
+      company: 'OCV, LLC',
+      position: 'Software Engineer Intern',
+      period: 'January 2025 - Present',
+      details: [
+        'Engineered user-friendly applications using SwiftUI, focusing on seamless UI/UX and efficient code architecture',
+        'Executed comprehensive testing using Xcode and Android Studio, ensuring high performance and compatibility across iOS and Android ecosystems'
+      ]
+    },
+    {
+      company: 'Auburn Human-Centered AI Lab',
+      position: 'Undergraduate Research Assistant',
+      period: 'August 2024 - December 2024',
+      details: [
+        'Researched jailbreak methods for large language models to understand how standard restrictions are bypassed',
+        'Examined safety procedures and the ethical consequences of security breaches in models'
+      ]
+    },
+    {
+      company: 'Welch Sneaks',
+      position: 'Founder',
+      period: 'August 2021 - May 2023',
+      details: [
+        'Successfully generated $40,000 in revenue through retail arbitrage tactics as sole proprietor',
+        'Developed an e-commerce platform utilizing React and Node.js to effectively display product, process orders, and handle customer relationships',
+        'Implemented an inventory management system to effectively manage daily orders by implementing API routes to query from MongoDB database and display it back to clients'
+      ]
+    }
+  ];
 
-// Updated projects data
-const projects = [
-  {
-    name: 'Mars Meteo',
-    description: 'A Mars weather web application with a comprehensive weather tracking dashboard.',
-    details: 'Led a team to develop this application, designed and built a web scraper using JavaScript for active updates of NASA Rover data, and crafted a user-friendly UI using React.',
-    tags: ['React', 'Node.js', 'JavaScript']
-  },
-  {
-    name: 'Lyric Vibe',
-    description: 'A sentiment analysis project, fetching a user\'s spotify data and quantifying user music taste on a numerical happy-to-sad scale.',
-    details: 'Utilized NLTK LLM sentiment analysis to review song lyrics from user accounts, allowing us to recommend songs based on mood.',
-    tags: ['Python', 'NLTK', 'pandas', 'Spotify API']
-  }
-];
+  // Data for projects.
+  const projects = [
+    {
+      name: 'Mars Meteo',
+      image: marsMeteo,
+      description: 'A Mars weather web application with a comprehensive weather tracking dashboard.',
+      details: 'Led a team to develop this application, designed and built a web scraper using JavaScript for active updates of NASA Rover data, and crafted a user-friendly UI using React.',
+      tags: ['React', 'Node.js', 'JavaScript']
+    },
+    {
+      name: 'Lyric Vibe',
+      image: lyricVibe,
+      description: 'A sentiment analysis project, fetching a user\'s spotify data and quantifying user music taste on a numerical happy-to-sad scale.',
+      details: 'Utilized NLTK LLM sentiment analysis to review song lyrics from user accounts, allowing us to recommend songs based on mood.',
+      tags: ['Python', 'NLTK', 'pandas', 'Spotify API']
+    }
+  ];
 
-  // Technologies based on experience and projects
+  // List of technologies to display in the about section.
   const technologies = [
     'React', 
     'SwiftUI', 
@@ -79,23 +98,17 @@ const projects = [
     'MongoDB'
   ];
   
-  // Handle scroll and update active section
+  // Effect to handle scroll events and update the active section.
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      
       const sections = ['home', 'about', 'experience', 'projects', 'contact'];
       
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
-          const offsetTop = element.offsetTop;
-          const offsetHeight = element.offsetHeight;
-          
-          if (
-            scrollPosition >= offsetTop - 100 && 
-            scrollPosition < offsetTop + offsetHeight - 100
-          ) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop - 100 && scrollPosition < offsetTop + offsetHeight - 100) {
             setActiveSection(section);
             break;
           }
@@ -104,12 +117,12 @@ const projects = [
     };
     
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Set initial active section
+    handleScroll(); // Set the initial active section on load.
     
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Typing animation effect
+  // Effect for the typing animation on the home screen.
   useEffect(() => {
     if (typingText.length < fullText.length) {
       const timeout = setTimeout(() => {
@@ -119,7 +132,7 @@ const projects = [
     }
   }, [typingText, fullText]);
 
-  // Cursor blink effect
+  // Effect for the blinking cursor animation.
   useEffect(() => {
     const interval = setInterval(() => {
       setShowCursor(prev => !prev);
@@ -127,28 +140,24 @@ const projects = [
     return () => clearInterval(interval);
   }, []);
 
-  // This runs right after the DOM is updated, before paint.
+  // Layout effect to handle the position of the experience indicator.
   useLayoutEffect(() => {
-    // Reset refs to match current experiences
     experienceMenuRefs.current = experienceMenuRefs.current.slice(0, experiences.length);
-    
-    // Force a small delay to ensure DOM elements are properly rendered
     const timer = setTimeout(() => {
       const currentRef = experienceMenuRefs.current[currentExperience];
-      if (currentRef && currentRef.offsetTop !== undefined) {
+      if (currentRef) {
         setIndicatorPosition(currentRef.offsetTop);
       }
     }, 100);
     
     return () => clearTimeout(timer);
-  }, [experiences.length]);
+  }, [experiences.length, currentExperience]);
 
-  // Update indicator position when currentExperience changes
+  // Effect to update the indicator position when the current experience changes.
   useEffect(() => {
-    // Force a small delay to ensure DOM elements are properly rendered
     const timer = setTimeout(() => {
       const currentRef = experienceMenuRefs.current[currentExperience];
-      if (currentRef && currentRef.offsetTop !== undefined) {
+      if (currentRef) {
         setIndicatorPosition(currentRef.offsetTop);
       }
     }, 100);
@@ -156,11 +165,10 @@ const projects = [
     return () => clearTimeout(timer);
   }, [currentExperience]);
 
-  // Additional component mount effect to ensure indicator is properly set
+  // Effect to set the initial indicator position when the component mounts.
   useEffect(() => {
-    // Force initial indicator update after component fully mounts
     const timer = setTimeout(() => {
-      if (experienceMenuRefs.current[0] && experienceMenuRefs.current[0].offsetTop !== undefined) {
+      if (experienceMenuRefs.current[0]) {
         setIndicatorPosition(experienceMenuRefs.current[0].offsetTop);
       }
     }, 500);
@@ -168,105 +176,66 @@ const projects = [
     return () => clearTimeout(timer);
   }, []);
 
+  // Main render method for the component.
   return (
-    <div className="bg-gray-900 text-white min-h-screen text-3xl" style={{ scrollBehavior: 'smooth' }}>
+    <div className="bg-gray-900 text-white min-h-screen text-3xl">
+      {/* Header section with navigation. */}
       <header className="p-6 flex justify-between items-center fixed top-0 left-0 right-0 bg-gray-900 z-50">
         <a href="#home" className="text-cyan-400">
           <div className="font-bold text-4xl font-mono">JW</div>
         </a>
-        <nav>
+        {/* Mobile menu button. */}
+        <div className="md:hidden">
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-white">
+            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
+        {/* Desktop navigation. */}
+        <nav className="hidden md:block">
           <ul className="flex space-x-6">
-            <li>
-              <a 
-                href="#home" 
-                style={{ 
-                  color: activeSection === 'home' ? 'rgb(34 211 238)' : 'rgb(209 213 219)',
-                  transition: 'color 0.3s'
-                }}
-                onMouseEnter={(e) => {
-                  if (activeSection !== 'home') e.currentTarget.style.color = 'rgb(34 211 238)';
-                }}
-                onMouseLeave={(e) => {
-                  if (activeSection !== 'home') e.currentTarget.style.color = 'rgb(209 213 219)';
-                }}
-              >
-                Home
-              </a>
-            </li>
-            <li>
-              <a 
-                href="#about" 
-                style={{ 
-                  color: activeSection === 'about' ? 'rgb(34 211 238)' : 'rgb(209 213 219)',
-                  transition: 'color 0.3s'
-                }}
-                onMouseEnter={(e) => {
-                  if (activeSection !== 'about') e.currentTarget.style.color = 'rgb(34 211 238)';
-                }}
-                onMouseLeave={(e) => {
-                  if (activeSection !== 'about') e.currentTarget.style.color = 'rgb(209 213 219)';
-                }}
-              >
-                About Me
-              </a>
-            </li>
-            <li>
-              <a 
-                href="#experience" 
-                style={{ 
-                  color: activeSection === 'experience' ? 'rgb(34 211 238)' : 'rgb(209 213 219)',
-                  transition: 'color 0.3s'
-                }}
-                onMouseEnter={(e) => {
-                  if (activeSection !== 'experience') e.currentTarget.style.color = 'rgb(34 211 238)';
-                }}
-                onMouseLeave={(e) => {
-                  if (activeSection !== 'experience') e.currentTarget.style.color = 'rgb(209 213 219)';
-                }}
-              >
-                Experience
-              </a>
-            </li>
-            <li>
-              <a 
-                href="#projects" 
-                style={{ 
-                  color: activeSection === 'projects' ? 'rgb(34 211 238)' : 'rgb(209 213 219)',
-                  transition: 'color 0.3s'
-                }}
-                onMouseEnter={(e) => {
-                  if (activeSection !== 'projects') e.currentTarget.style.color = 'rgb(34 211 238)';
-                }}
-                onMouseLeave={(e) => {
-                  if (activeSection !== 'projects') e.currentTarget.style.color = 'rgb(209 213 219)';
-                }}
-              >
-                Projects
-              </a>
-            </li>
-            <li>
-              <a 
-                href="#contact" 
-                style={{ 
-                  color: activeSection === 'contact' ? 'rgb(34 211 238)' : 'rgb(209 213 219)',
-                  transition: 'color 0.3s'
-                }}
-                onMouseEnter={(e) => {
-                  if (activeSection !== 'contact') e.currentTarget.style.color = 'rgb(34 211 238)';
-                }}
-                onMouseLeave={(e) => {
-                  if (activeSection !== 'contact') e.currentTarget.style.color = 'rgb(209 213 219)';
-                }}
-              >
-                Contact
-              </a>
-            </li>
+            {['home', 'about', 'experience', 'projects', 'contact'].map(section => (
+              <li key={section}>
+                <a 
+                  href={`#${section}`}
+                  style={{ 
+                    color: activeSection === section ? 'rgb(34 211 238)' : 'rgb(209 213 219)',
+                    transition: 'color 0.3s'
+                  }}
+                  onMouseEnter={(e) => {
+                    if (activeSection !== section) e.currentTarget.style.color = 'rgb(34 211 238)';
+                  }}
+                  onMouseLeave={(e) => {
+                    if (activeSection !== section) e.currentTarget.style.color = 'rgb(209 213 219)';
+                  }}
+                >
+                  {section.charAt(0).toUpperCase() + section.slice(1)}
+                </a>
+              </li>
+            ))}
           </ul>
         </nav>
+        {/* Mobile dropdown menu. */}
+        {isMenuOpen && (
+          <div className="absolute top-16 left-0 right-0 bg-gray-900 md:hidden">
+            <ul className="flex flex-col items-center space-y-4 py-4">
+              {['home', 'about', 'experience', 'projects', 'contact'].map(section => (
+                <li key={section}>
+                  <a 
+                    href={`#${section}`}
+                    className="text-gray-300 hover:text-cyan-400 transition-colors duration-300"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {section.charAt(0).toUpperCase() + section.slice(1)}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </header>
 
-      {/* Side links with icons */}
-      <div className="fixed left-6 bottom-0 flex flex-col items-center z-40 text-2xl">
+      {/* Social media links on the side. */}
+      <div className="fixed left-6 bottom-0 flex-col items-center z-40 text-2xl hidden md:flex">
         <div className="flex flex-col space-y-6 mb-8">
           <a 
             href="https://github.com/jdw004" 
@@ -306,23 +275,9 @@ const projects = [
         <div className="h-24 w-px bg-gray-700"></div>
       </div>
 
-      {/* Right side links */}
-      {/* text-2xl for bigger text on the right side */}
-      <div className="fixed right-6 bottom-0 flex flex-col items-center z-40 text-3xl">
-        <div className="flex flex-col space-y-6 mb-8">
-          <a
-            href="mailto:jwelch04@outlook.com"
-            className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 writing-mode-vertical-right"
-          >
-            jwelch04@outlook.com
-          </a>
-        </div>
-        <div className="h-24 w-px bg-gray-700"></div>
-      </div>
-
-      {/* Main content */}
+      {/* Main content of the portfolio. */}
       <main className="max-w-5xl mx-auto px-6 pt-24">
-        {/* Home Section */}
+        {/* Home section with typing animation. */}
         <section id="home" className="h-screen flex flex-col items-center justify-center">
           <div className="text-left font-mono text-white text-6xl mb-8">
             <pre className="whitespace-pre-wrap">
@@ -332,13 +287,11 @@ const projects = [
           </div>
         </section>
 
-        {/* About Me Section - NEW SECTION */}
+        {/* About Me section. */}
         <section id="about" className="py-24">
           <h2 className="text-cyan-400 font-mono text-3xl mb-16">About Me</h2>
-          
-          <div className="grid grid-cols-12 gap-8">
-            {/* Left side - Text */}
-            <div className="col-span-7">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+            <div className="md:col-span-7">
               <div className="font-mono text-xl leading-relaxed text-white">
                 <p className="mb-6">
                   Hey, my name is John and I'm a software engineering student at Auburn University. Lately I've been working to leverage <span className="text-cyan-400">mobile development</span> to create <span className="text-cyan-400">engaging iOS/Android applications</span>.
@@ -349,11 +302,9 @@ const projects = [
                 <p className="mb-8">
                   I have a passion for continually expanding my skill-set, so if you have a project you'd like to collaborate on, please don't hesitate to reach out!
                 </p>
-                
                 <p className="text-xl text-gray-300 mb-4">
                   Here are a few technologies I've been working with recently:
                 </p>
-                
                 <div className="grid grid-cols-2 gap-2">
                   {technologies.map((tech, index) => (
                     <div key={index} className="flex items-center mb-3">
@@ -364,9 +315,8 @@ const projects = [
                 </div>
               </div>
             </div>
-            
-            {/* Right side - Image */}
-            <div className="col-span-5 flex justify-center items-center">
+            {/* Profile image. */}
+            <div className="md:col-span-5 flex justify-center items-center">
               <div className="relative w-72 h-72">
                 <div className="absolute -top-4 -left-4 w-72 h-72 bg-cyan-400 bg-opacity-20 rounded-md transition-all duration-300 hover:translate-x-2 hover:translate-y-2">
                   <div className="relative w-full h-full overflow-hidden rounded-md">
@@ -388,15 +338,13 @@ const projects = [
           </div>
         </section>
 
-        {/* Experience Section */}
+        {/* Work Experience section. */}
         <section id="experience" className="text-2xl py-24">
           <h2 className="text-cyan-400 font-mono text-3xl mb-16">Work Experience</h2>
-          
-          <div className="grid grid-cols-12 gap-6 mx-auto max-w-5xl">
-            {/* Experience Menu (Left Side) */}
-            <div className="col-span-3 relative">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 mx-auto max-w-5xl">
+            {/* Experience menu. */}
+            <div className="md:col-span-3 relative">
               <div className="font-mono sticky top-24">
-                {/* Moving indicator */}
                 <div 
                   className="absolute w-2 h-8 bg-cyan-400 transition-all duration-300 ease-in-out" 
                   style={{ 
@@ -404,8 +352,6 @@ const projects = [
                     left: "-10px"
                   }}
                 />
-                
-                {/* Experience Menu Items */}
                 {experiences.map((exp, index) => (
                   <div 
                     key={index}
@@ -420,9 +366,8 @@ const projects = [
                 ))}
               </div>
             </div>
-            
-            {/* Experience Content (Right Side) */}
-            <div className="col-span-9">
+            {/* Experience details. */}
+            <div className="md:col-span-9">
               {experiences.map((exp, index) => (
                 <div 
                   key={index} 
@@ -437,7 +382,6 @@ const projects = [
                     </h3>
                     <p className="text-gray-300 font-mono">{exp.period}</p>
                   </div>
-                  
                   <div className="mt-8">
                     {exp.details.map((detail, idx) => (
                       <div key={idx} className="mb-6 font-mono">
@@ -452,7 +396,7 @@ const projects = [
           </div>
         </section>
 
-        {/* Projects Section with fixed image container */}
+        {/* Projects section. */}
         <section id="projects" className="py-24">
           <h2 className="text-cyan-400 font-mono text-3xl mb-16">Projects</h2>
           {projects.map((project, index) => (
@@ -461,10 +405,9 @@ const projects = [
                 <span className="text-white text-2xl">{project.name}</span>
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* UPDATED: Image container with better sizing and object-fit properties */}
                 <div className="font-mono text-right md:text-left bg-gray-800 rounded-xl shadow-lg hover:shadow-cyan-400/20 transition-all duration-300 flex items-center justify-center h-56 w-full overflow-hidden">
                   <img 
-                    src={`/images/${project.name.toLowerCase().replace(' ', '-')}.png`} 
+                    src={project.image} 
                     alt={`${project.name} interface`}
                     className="max-w-full max-h-full object-contain mx-auto my-auto transition-transform duration-500 hover:scale-105" 
                     loading="lazy"
@@ -472,8 +415,8 @@ const projects = [
                       e.target.onerror = null;
                       e.target.style.display = 'none';
                       e.target.parentNode.innerHTML += `
-                        <div class=\"w-full h-full flex items-center justify-center bg-gray-800\">
-                          <div class=\"text-cyan-400 text-xl font-mono\">
+                        <div class="w-full h-full flex items-center justify-center bg-gray-800">
+                          <div class="text-cyan-400 text-xl font-mono">
                             ${project.name} Preview
                           </div>
                         </div>
@@ -489,7 +432,6 @@ const projects = [
                       <span key={idx} className="text-cyan-400">/tag/{tag}</span>
                     ))}
                   </div>
-                  {/* MOVED: GitHub icon to the right side */}
                   <div className="mt-4">
                     <a 
                       href={`https://github.com/jdw004/${project.name.toLowerCase().replace(' ', '-')}`} 
@@ -507,7 +449,7 @@ const projects = [
           ))}
         </section>
 
-        {/* Contact Section */}
+        {/* Contact section. */}
         <section id="contact" className="pt-16 pb-24 flex flex-col items-center">
           <h2 className="text-cyan-400 font-mono text-3xl mb-16">Contact-Me</h2>
           <div className="max-w-2xl mx-auto text-center">
@@ -533,7 +475,7 @@ const projects = [
         </section>
       </main>
 
-      {/* Global styles for vertical text */}
+      {/* Custom global styles. */}
       <style jsx>{`
         .writing-mode-vertical {
           writing-mode: vertical-rl;
