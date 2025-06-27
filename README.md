@@ -5,7 +5,7 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
 
-A modern, responsive portfolio website showcasing my journey as a software engineering student at Auburn University. Built with React and Tailwind CSS, featuring smooth animations, mobile-first design, and an elegant dark theme.
+A modern portfolio website showcasing my journey as a software engineer. Built with React and Tailwind CSS, featuring smooth animations, mobile-first design, and a sky blue theme.
 
 ## 🚀 Live Demo
 
@@ -14,9 +14,8 @@ A modern, responsive portfolio website showcasing my journey as a software engin
 ## 🛠️ Technologies Used
 
 - **React 19** - Latest React with hooks and modern patterns
-- **Tailwind CSS 4** - Utility-first CSS framework for rapid styling
-- **Vite** - Lightning-fast build tool and dev server
-- **Lucide React** - Beautiful, customizable icons
+- **Tailwind CSS 4** - Utility first CSS framework for rapid styling
+- **Vite** - Build tool and dev server
 - **GitHub Pages** - Automated deployment with gh-pages
 
 ## 🚀 Quick Start
