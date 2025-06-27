@@ -35,7 +35,7 @@ I write code.`;
       position: 'Software Engineer Intern',
       period: 'June 2025 - August 2025',
       details: [
-        'Created .NET MCP server for GitHub Copilot and Jira, automating code generation for 10+ weekly user stories',
+        'Created .NET server for GitHub Copilot and Jira, automating code generation for 10+ weekly user stories',
         'Enhanced code generation by integrating Meta\'s Llama 4 to MCP via AWS Bedrock to support 2000+ developers',
         'Implemented Jenkins CI/CD build pipeline using Docker, Bash, AWS Cloudformation alongside DevOps team'
       ]
