@@ -59,7 +59,7 @@ I write code.`;
       ]
     },
     {
-      company: 'LPL Financial 2024',
+      company: 'LPL Financial Summer 2024',
       position: 'Software Engineer Intern',
       period: 'June 2024 - August 2024',
       details: [
