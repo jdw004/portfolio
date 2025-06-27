@@ -207,6 +207,7 @@ I write code.`;
               <li key={section}>
                 <a 
                   href={`#${section}`}
+                  className="text-2xl font-normal"
                   style={{ 
                     color: activeSection === section ? 'rgb(34 211 238)' : 'rgb(209 213 219)',
                     transition: 'color 0.3s'
