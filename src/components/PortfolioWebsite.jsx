@@ -227,13 +227,13 @@ I write code.`;
         </nav>
         {/* Mobile dropdown menu. */}
         {isMenuOpen && (
-          <div className="absolute top-16 left-0 right-0 bg-gray-900 md:hidden">
-            <ul className="flex flex-col items-center space-y-4 py-4">
+          <div className="absolute top-16 left-0 right-0 backdrop-blur-sm md:hidden">
+            <ul className="flex flex-col items-end space-y-4 py-4 pr-6">
               {['home', 'about', 'experience', 'projects', 'contact'].map(section => (
                 <li key={section}>
                   <a 
                     href={`#${section}`}
-                    className="text-gray-300 hover:text-cyan-400 transition-colors duration-300"
+                    className="text-white hover:text-cyan-400 transition-colors duration-300 font-semibold text-shadow"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {section.charAt(0).toUpperCase() + section.slice(1)}
@@ -327,7 +327,7 @@ I write code.`;
               </div>
             </div>
             {/* Profile image. */}
-            <div className="md:col-span-5 flex justify-center items-center">
+            <div className="md:col-span-5 justify-center items-center hidden md:flex">
               <div className="relative w-56 h-56">
                 <div className="absolute -top-3 -left-3 w-56 h-56 bg-cyan-400 bg-opacity-20 rounded-md transition-all duration-300 hover:translate-x-2 hover:translate-y-2">
                   <div className="relative w-full h-full overflow-hidden rounded-md">
@@ -475,7 +475,7 @@ I write code.`;
               </a>
             </div>
           </div>
-          <div className="mt-12 text-gray-400 text-lg font-mono">
+          <div className="mt-12 text-gray-400 text-lg font-mono text-center md:text-left">
             Built with inspo from  
             <a href="https://github.com/wumphlett/willhumphlett" className="text-cyan-400 mx-1 hover:text-white transition-colors duration-300"> Will Humphlett</a> &
             <a href="https://github.com/jmurrah/personal-portfolio" className="text-cyan-400 mx-1 hover:text-white transition-colors duration-300"> Jacob Murrah</a>
@@ -497,6 +497,10 @@ I write code.`;
         .writing-mode-vertical-right {
           writing-mode: vertical-rl;
           text-orientation: mixed;
+        }
+        
+        .text-shadow {
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8), 0 0 4px rgba(0, 0, 0, 0.5);
         }
       `}</style>
     </div>
