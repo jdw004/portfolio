@@ -31,9 +31,9 @@ I write code.`;
   // Data for work experiences.
   const experiences = [
     {
-      company: 'LPL Financial',
+      company: 'LPL Financial Summer 2025',
       position: 'Software Engineer Intern',
-      period: 'June 2024 - August 2024',
+      period: 'June 2025 - August 2025',
       details: [
         'Created .NET MCP server for GitHub Copilot and Jira, automating code generation for 10+ weekly user stories',
         'Enhanced code generation by integrating Meta\'s Llama 4 to MCP via AWS Bedrock to support 2000+ developers',
@@ -41,7 +41,7 @@ I write code.`;
       ]
     },
     {
-      company: 'OCV, LLC',
+      company: 'OCV, LLC Winter 2025',
       position: 'Software Engineer Intern',
       period: 'January 2025 - Present',
       details: [
@@ -50,12 +50,22 @@ I write code.`;
       ]
     },
     {
-      company: 'Auburn Human-Centered AI Lab',
+      company: 'Auburn Human-Centered AI Lab Fall 2024',
       position: 'Undergraduate Research Assistant',
       period: 'August 2024 - December 2024',
       details: [
         'Researched jailbreak methods for large language models to understand how standard restrictions are bypassed',
         'Examined safety procedures and the ethical consequences of security breaches in models'
+      ]
+    },
+    {
+      company: 'LPL Financial 2024',
+      position: 'Software Engineer Intern',
+      period: 'June 2024 - August 2024',
+      details: [
+        'Developed AWS application deployment manager using Angular and Terraform, decreasing deployment time by 50\%',
+        'Reduced app downtime 30\% by building load balancer for blue-green deployment, enabling updates for 22,000+ advisors',
+        'Decreased yearly meetings 20 hours for Infosec employees by automating notifications for annual reviews using Jira API'
       ]
     },
     {
@@ -90,12 +100,12 @@ I write code.`;
 
   // List of technologies to display in the about section.
   const technologies = [
+    'Golang', 
     'React', 
-    'SwiftUI', 
     'JavaScript', 
     'Python',
     'AWS', 
-    'MongoDB'
+    'Docker'
   ];
   
   // Effect to handle scroll events and update the active section.
@@ -178,7 +188,7 @@ I write code.`;
 
   // Main render method for the component.
   return (
-    <div className="bg-gray-900 text-white min-h-screen text-3xl">
+    <div className="bg-gray-900 text-white min-h-screen text-lg">
       {/* Header section with navigation. */}
       <header className="p-6 flex justify-between items-center fixed top-0 left-0 right-0 bg-gray-900 z-50">
         <a href="#home" className="text-cyan-400">
@@ -288,26 +298,26 @@ I write code.`;
         </section>
 
         {/* About Me section. */}
-        <section id="about" className="py-24">
-          <h2 className="text-cyan-400 font-mono text-3xl mb-16">About Me</h2>
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+        <section id="about" className="py-16">
+          <h2 className="text-cyan-400 font-mono text-2xl mb-12">About Me</h2>
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
             <div className="md:col-span-7">
-              <div className="font-mono text-xl leading-relaxed text-white">
-                <p className="mb-6">
-                  Hey, my name is John and I'm a software engineering student at Auburn University. Lately I've been working to leverage <span className="text-cyan-400">mobile development</span> to create <span className="text-cyan-400">engaging iOS/Android applications</span>.
+              <div className="font-mono text-lg leading-relaxed text-white">
+                <p className="mb-4">
+                  Hey, my name is John and I'm a software engineering student at Auburn University. Lately I've been working to leverage <span className="text-cyan-400">artificial intelligence</span> to create a <span className="text-cyan-400">stock analysis tool</span>.
+                </p>
+                <p className="mb-4">
+                  To date, I've had the privilege of working as an intern for two summers at <span className="text-cyan-400">LPL Financial</span>, creating AI-driven developer tools, automations, and more. I've also gained valuable experience by researching LLMs at Auburn's Human-Centered AI Lab, creating a <span className="text-cyan-400">5 star iOS application</span> at OCV, and founding my own e-commerce business.
                 </p>
                 <p className="mb-6">
-                  To date, I've had the privilege of working as an intern at <span className="text-cyan-400">OCV</span>, conducting <span className="text-cyan-400">undergraduate research</span> at Auburn's Human-Centered AI Lab, <span className="text-cyan-400">interning at LPL Financial</span>, and founding my own e-commerce business.
-                </p>
-                <p className="mb-8">
                   I have a passion for continually expanding my skill-set, so if you have a project you'd like to collaborate on, please don't hesitate to reach out!
                 </p>
-                <p className="text-xl text-gray-300 mb-4">
+                <p className="text-lg text-gray-300 mb-3">
                   Here are a few technologies I've been working with recently:
                 </p>
                 <div className="grid grid-cols-2 gap-2">
                   {technologies.map((tech, index) => (
-                    <div key={index} className="flex items-center mb-3">
+                    <div key={index} className="flex items-center mb-2">
                       <span className="text-cyan-400 mr-2">{'>'}</span>
                       <span>{tech}</span>
                     </div>
@@ -317,8 +327,8 @@ I write code.`;
             </div>
             {/* Profile image. */}
             <div className="md:col-span-5 flex justify-center items-center">
-              <div className="relative w-72 h-72">
-                <div className="absolute -top-4 -left-4 w-72 h-72 bg-cyan-400 bg-opacity-20 rounded-md transition-all duration-300 hover:translate-x-2 hover:translate-y-2">
+              <div className="relative w-56 h-56">
+                <div className="absolute -top-3 -left-3 w-56 h-56 bg-cyan-400 bg-opacity-20 rounded-md transition-all duration-300 hover:translate-x-2 hover:translate-y-2">
                   <div className="relative w-full h-full overflow-hidden rounded-md">
                     <img
                       src="/images/profile.jpg"
@@ -339,8 +349,8 @@ I write code.`;
         </section>
 
         {/* Work Experience section. */}
-        <section id="experience" className="text-2xl py-24">
-          <h2 className="text-cyan-400 font-mono text-3xl mb-16">Work Experience</h2>
+        <section id="experience" className="text-lg py-16">
+          <h2 className="text-cyan-400 font-mono text-2xl mb-12">Work Experience</h2>
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 mx-auto max-w-5xl">
             {/* Experience menu. */}
             <div className="md:col-span-3 relative">
@@ -375,16 +385,16 @@ I write code.`;
                     index === currentExperience ? 'opacity-100 block' : 'opacity-0 hidden'
                   }`}
                 >
-                  <div className="mb-6">
-                    <h3 className="text-white text-2xl font-mono">
+                  <div className="mb-4">
+                    <h3 className="text-white text-xl font-mono">
                       {exp.position} @ 
                       <span className="text-cyan-400"> {exp.company}</span>
                     </h3>
-                    <p className="text-gray-300 font-mono">{exp.period}</p>
+                    <p className="text-gray-300 font-mono text-sm">{exp.period}</p>
                   </div>
-                  <div className="mt-8">
+                  <div className="mt-6">
                     {exp.details.map((detail, idx) => (
-                      <div key={idx} className="mb-6 font-mono">
+                      <div key={idx} className="mb-4 font-mono">
                         <span className="text-cyan-400">{'>'}</span>
                         <span className="ml-4 text-white">{detail}</span>
                       </div>
@@ -397,15 +407,15 @@ I write code.`;
         </section>
 
         {/* Projects section. */}
-        <section id="projects" className="py-24">
-          <h2 className="text-cyan-400 font-mono text-3xl mb-16">Projects</h2>
+        <section id="projects" className="py-16">
+          <h2 className="text-cyan-400 font-mono text-2xl mb-12">Projects</h2>
           {projects.map((project, index) => (
-            <div key={index} className="mb-20">
-              <h3 className="text-cyan-400 font-mono text-xl mb-6">
-                <span className="text-white text-2xl">{project.name}</span>
+            <div key={index} className="mb-16">
+              <h3 className="text-cyan-400 font-mono text-lg mb-4">
+                <span className="text-white text-xl">{project.name}</span>
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="font-mono text-right md:text-left bg-gray-800 rounded-xl shadow-lg hover:shadow-cyan-400/20 transition-all duration-300 flex items-center justify-center h-56 w-full overflow-hidden">
+                <div className="font-mono text-right md:text-left bg-gray-800 rounded-xl shadow-lg hover:shadow-cyan-400/20 transition-all duration-300 flex items-center justify-center h-48 w-full overflow-hidden">
                   <img 
                     src={project.image} 
                     alt={`${project.name} interface`}
@@ -425,14 +435,14 @@ I write code.`;
                   />
                 </div>
                 <div className="font-mono text-right">
-                  <p className="text-white mb-6">{project.description}</p>
-                  <p className="text-gray-300 text-xl mb-8">{project.details}</p>
+                  <p className="text-white mb-4 text-lg">{project.description}</p>
+                  <p className="text-gray-300 text-base mb-6">{project.details}</p>
                   <div className="flex flex-wrap justify-end gap-4">
                     {project.tags.map((tag, idx) => (
-                      <span key={idx} className="text-cyan-400">/tag/{tag}</span>
+                      <span key={idx} className="text-cyan-400 text-sm">/tag/{tag}</span>
                     ))}
                   </div>
-                  <div className="mt-4">
+                  <div className="mt-3">
                     <a 
                       href={`https://github.com/jdw004/${project.name.toLowerCase().replace(' ', '-')}`} 
                       target="_blank" 
@@ -440,7 +450,7 @@ I write code.`;
                       className="inline-block text-cyan-400 hover:text-white transition-colors duration-300"
                       aria-label={`View ${project.name} code on GitHub`}
                     >
-                      <Github size={42} />
+                      <Github size={32} />
                     </a>
                   </div>
                 </div>
@@ -450,21 +460,21 @@ I write code.`;
         </section>
 
         {/* Contact section. */}
-        <section id="contact" className="pt-16 pb-24 flex flex-col items-center">
-          <h2 className="text-cyan-400 font-mono text-3xl mb-16">Contact-Me</h2>
+        <section id="contact" className="pt-12 pb-16 flex flex-col items-center">
+          <h2 className="text-cyan-400 font-mono text-2xl mb-12">Contact-Me</h2>
           <div className="max-w-2xl mx-auto text-center">
-            <p className="text-white font-mono mb-12">
+            <p className="text-white font-mono mb-8 text-lg">
             I'm exploring new opportunities, so my inbox is always open. 
             Feel free to reach out with any questions or just to say hello.
             I promise to get back to you as soon as I can!
             </p>
             <div className="flex justify-center gap-6">
-              <a href="mailto:jwelch04@outlook.com" className="text-cyan-400 hover:text-white transition-colors duration-300 flex items-center">
-                <Mail size={18} className="mr-2" /> Email
+              <a href="mailto:jwelch04@outlook.com" className="text-cyan-400 hover:text-white transition-colors duration-300 flex items-center text-lg">
+                <Mail size={16} className="mr-2" /> Email
               </a>
             </div>
           </div>
-          <div className="mt-16 text-gray-400 text-xl font-mono">
+          <div className="mt-12 text-gray-400 text-lg font-mono">
             Built with inspo from  
             <a href="https://github.com/wumphlett/willhumphlett" className="text-cyan-400 mx-1 hover:text-white transition-colors duration-300"> Will Humphlett</a> &
             <a href="https://github.com/jmurrah/personal-portfolio" className="text-cyan-400 mx-1 hover:text-white transition-colors duration-300"> Jacob Murrah</a>
