@@ -1,6 +1,6 @@
 // Import necessary components and libraries from React and other packages.
 import React, { useState, useEffect, useRef, useLayoutEffect } from 'react';
-import { Github, Linkedin, Mail, Menu, X } from 'lucide-react';
+import { Github, Linkedin, Mail, Menu, X, SquareArrowOutUpRight } from 'lucide-react';
 
 // Import project images.
 import marsMeteo from '/images/mars-meteo.png';
@@ -444,15 +444,50 @@ I write code.`;
                     ))}
                   </div>
                   <div className="mt-3">
-                    <a 
-                      href={`https://github.com/jdw004/${project.name.toLowerCase().replace(' ', '-')}`} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="inline-block text-cyan-400 hover:text-white transition-colors duration-300"
-                      aria-label={`View ${project.name} code on GitHub`}
-                    >
-                      <Github size={32} />
-                    </a>
+                    {project.name === 'Lyric Vibe' ? (
+                      <div className="flex gap-4 justify-end">
+                        <a 
+                          href="https://www.youtube.com/watch?v=fyFrPITK4m8" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="inline-block text-cyan-400 hover:text-white transition-colors duration-300"
+                          aria-label={`View ${project.name} live demo`}
+                        >
+                          <SquareArrowOutUpRight size={30} />
+                        </a>
+                        <a 
+                          href={`https://github.com/jdw004/${project.name.toLowerCase().replace(' ', '-')}`} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="inline-block text-cyan-400 hover:text-white transition-colors duration-300"
+                          aria-label={`View ${project.name} code on GitHub`}
+                        >
+                          <Github size={32} />
+                        </a>
+                      </div>
+                    ) : project.name === 'Mars Meteo' ? (
+                      <div className="flex gap-4 justify-end">
+                        <a 
+                          href={`https://github.com/jdw004/${project.name.toLowerCase().replace(' ', '-')}`} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="inline-block text-cyan-400 hover:text-white transition-colors duration-300"
+                          aria-label={`View ${project.name} code on GitHub`}
+                        >
+                          <Github size={32} />
+                        </a>
+                      </div>
+                    ) : (
+                      <a 
+                        href={`https://github.com/jdw004/${project.name.toLowerCase().replace(' ', '-')}`} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-block text-cyan-400 hover:text-white transition-colors duration-300"
+                        aria-label={`View ${project.name} code on GitHub`}
+                      >
+                        <Github size={32} />
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
