@@ -473,6 +473,14 @@ I write code.`;
               <a href="mailto:jwelch04@outlook.com" className="text-cyan-400 hover:text-white transition-colors duration-300 flex items-center text-lg">
                 <Mail size={16} className="mr-2" /> Email
               </a>
+              <a 
+                href="https://www.linkedin.com/in/johnd-welch/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-cyan-400 hover:text-white transition-colors duration-300 flex items-center text-lg md:hidden"
+              >
+                <Linkedin size={16} className="mr-2" /> LinkedIn
+              </a>
             </div>
           </div>
           <div className="mt-12 text-gray-400 text-lg font-mono text-center md:text-left">
