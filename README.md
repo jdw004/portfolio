@@ -9,7 +9,7 @@ A modern portfolio website showcasing my journey as a software engineer. Built w
 
 ## 🚀 Live Demo
 
-**[View Portfolio →](https://jdw004.github.io/portfolio/)**
+**[View Portfolio →](https://www.john-welch.dev/)**
 
 ## 🛠️ Technologies Used
 
