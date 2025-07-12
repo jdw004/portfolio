@@ -1,8 +1,7 @@
-// Import necessary components and libraries from React and other packages.
 import React, { useState, useEffect, useRef, useLayoutEffect } from 'react';
 import { Github, Linkedin, Mail, Menu, X, SquareArrowOutUpRight } from 'lucide-react';
 
-// Import project images.
+// Import project images
 import marsMeteo from '/images/mars-meteo.png';
 import lyricVibe from '/images/lyric-vibe.png';
 
@@ -41,16 +40,16 @@ I write code.`;
       ]
     },
     {
-      company: 'OCV, LLC Winter 2025',
+      company: 'OCV, LLC',
       position: 'Software Engineer Intern',
-      period: 'January 2025 - Present',
+      period: 'January 2025 - April 2025',
       details: [
         'Engineered user-friendly applications using SwiftUI, focusing on seamless UI/UX and efficient code architecture',
         'Executed comprehensive testing using Xcode and Android Studio, ensuring high performance and compatibility across iOS and Android ecosystems'
       ]
     },
     {
-      company: 'Auburn Human-Centered AI Lab Fall 2024',
+      company: 'Auburn Human-Centered AI Lab',
       position: 'Undergraduate Research Assistant',
       period: 'August 2024 - December 2024',
       details: [
@@ -156,7 +155,10 @@ I write code.`;
     const timer = setTimeout(() => {
       const currentRef = experienceMenuRefs.current[currentExperience];
       if (currentRef) {
-        setIndicatorPosition(currentRef.offsetTop);
+        // Center the indicator on the selected item
+        const itemHeight = currentRef.offsetHeight;
+        const indicatorHeight = 48; // 12 * 4px (h-12)
+        setIndicatorPosition(currentRef.offsetTop + (itemHeight / 2) - (indicatorHeight / 2));
       }
     }, 100);
     
@@ -168,7 +170,10 @@ I write code.`;
     const timer = setTimeout(() => {
       const currentRef = experienceMenuRefs.current[currentExperience];
       if (currentRef) {
-        setIndicatorPosition(currentRef.offsetTop);
+        // Center the indicator on the selected item
+        const itemHeight = currentRef.offsetHeight;
+        const indicatorHeight = 48; // 12 * 4px (h-12)
+        setIndicatorPosition(currentRef.offsetTop + (itemHeight / 2) - (indicatorHeight / 2));
       }
     }, 100);
     
@@ -179,7 +184,11 @@ I write code.`;
   useEffect(() => {
     const timer = setTimeout(() => {
       if (experienceMenuRefs.current[0]) {
-        setIndicatorPosition(experienceMenuRefs.current[0].offsetTop);
+        // Center the indicator on the first item
+        const firstRef = experienceMenuRefs.current[0];
+        const itemHeight = firstRef.offsetHeight;
+        const indicatorHeight = 48; // 12 * 4px (h-12)
+        setIndicatorPosition(firstRef.offsetTop + (itemHeight / 2) - (indicatorHeight / 2));
       }
     }, 500);
     
@@ -258,7 +267,7 @@ I write code.`;
             onMouseEnter={(e) => e.currentTarget.style.color = 'rgb(34 211 238)'}
             onMouseLeave={(e) => e.currentTarget.style.color = 'rgb(156 163 175)'}
           >
-            <Github size={42} />
+            <Github size={33} />
           </a>
           <a 
             href="https://www.linkedin.com/in/johnd-welch/" 
@@ -270,7 +279,7 @@ I write code.`;
             onMouseEnter={(e) => e.currentTarget.style.color = 'rgb(34 211 238)'}
             onMouseLeave={(e) => e.currentTarget.style.color = 'rgb(156 163 175)'}
           >
-            <Linkedin size={42} />
+            <Linkedin size={33} />
           </a>
           <a 
             href="mailto:jwelch04@outlook.com" 
@@ -280,7 +289,7 @@ I write code.`;
             onMouseEnter={(e) => e.currentTarget.style.color = 'rgb(34 211 238)'}
             onMouseLeave={(e) => e.currentTarget.style.color = 'rgb(156 163 175)'}
           >
-            <Mail size={42} />
+            <Mail size={33} />
           </a>
         </div>
         <div className="h-24 w-px bg-gray-700"></div>
@@ -357,18 +366,22 @@ I write code.`;
             <div className="md:col-span-3 relative">
               <div className="font-mono sticky top-24">
                 <div 
-                  className="absolute w-2 h-8 bg-cyan-400 transition-all duration-300 ease-in-out" 
+                  className="absolute w-4 h-8 bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 shadow-lg transition-all duration-500 ease-out transform hover:scale-110 rotate-45" 
                   style={{ 
                     top: `${indicatorPosition}px`, 
-                    left: "-10px"
+                    left: "-20px",
+                    boxShadow: "0 0 25px rgba(34, 211, 238, 0.6), 0 0 40px rgba(34, 211, 238, 0.3)",
+                    clipPath: "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)"
                   }}
                 />
                 {experiences.map((exp, index) => (
                   <div 
                     key={index}
                     ref={el => experienceMenuRefs.current[index] = el}
-                    className={`py-2 mb-4 pl-4 cursor-pointer transition-colors duration-300 ${
-                      index === currentExperience ? 'text-white' : 'text-gray-400'
+                    className={`py-3 mb-4 pl-6 cursor-pointer transition-all duration-300 rounded-r-lg ${
+                      index === currentExperience 
+                        ? 'text-white bg-gray-800/30 border-r-2 border-cyan-400 transform translate-x-1' 
+                        : 'text-gray-400 hover:text-gray-200 hover:bg-gray-800/20 hover:translate-x-0.5'
                     }`}
                     onClick={() => setCurrentExperience(index)}
                   >
