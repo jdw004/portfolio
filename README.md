@@ -13,12 +13,6 @@ A modern portfolio website showcasing my journey as a software engineer. Built w
 - **Vite** - Build tool and dev server
 - **GitHub Pages** - Automated deployment with gh-pages
 
-## 🚀 Quick Start
-
-### Prerequisites
-- Node.js (v18+ recommended)
-- npm or yarn
-
 ## 📁 Project Structure
 
 ```
@@ -40,15 +34,6 @@ portfolio/
 ├── vite.config.mjs            # Vite configuration
 ├── tailwind.config.js         # Tailwind CSS configuration
 └── README.md
-```
-
-## 🔧 Development Scripts
-
-```bash
-npm run dev          # Start development server
-npm run build        # Build for production
-npm run deploy       # Deploy to GitHub Pages
-npm run preview      # Preview production build locally
 ```
 
 ## 🤝 Connect With Me
