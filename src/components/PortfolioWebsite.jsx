@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useLayoutEffect } from 'react';
-import { Github, Linkedin, Mail, Menu, X, SquareArrowOutUpRight } from 'lucide-react';
+import { Github, Linkedin, Mail, Menu, X, SquareArrowOutUpRight, ChevronsRight} from 'lucide-react';
 
 // Import project images
 import marsMeteo from '/images/mars-meteo.png';
@@ -30,7 +30,8 @@ I write code.`;
   // Data for work experiences.
   const experiences = [
     {
-      company: 'LPL Financial Summer 2025',
+      company: 'LPL Financial \'25',
+      companyFull: 'LPL Financial',
       position: 'Software Engineer Intern',
       period: 'June 2025 - August 2025',
       details: [
@@ -40,7 +41,8 @@ I write code.`;
       ]
     },
     {
-      company: 'OCV, LLC',
+      company: 'OCV, LLC \'25',
+      companyFull: 'OCV, LLC',
       position: 'Software Engineer Intern',
       period: 'January 2025 - April 2025',
       details: [
@@ -49,7 +51,8 @@ I write code.`;
       ]
     },
     {
-      company: 'Auburn Human-Centered AI Lab',
+      company: 'Auburn HCAI Lab \'24',
+      companyFull: ' AU Human-Centered AI Lab',
       position: 'Undergraduate Research Assistant',
       period: 'August 2024 - December 2024',
       details: [
@@ -58,7 +61,8 @@ I write code.`;
       ]
     },
     {
-      company: 'LPL Financial Summer 2024',
+      company: 'LPL Financial \'24',
+      companyFull: 'LPL Financial',
       position: 'Software Engineer Intern',
       period: 'June 2024 - August 2024',
       details: [
@@ -68,7 +72,8 @@ I write code.`;
       ]
     },
     {
-      company: 'Welch Sneaks',
+      company: 'Welch Sneaks \'23',
+      companyFull: 'Welch Sneaks',
       position: 'Founder',
       period: 'August 2021 - May 2023',
       details: [
@@ -117,7 +122,7 @@ I write code.`;
         const element = document.getElementById(section);
         if (element) {
           const { offsetTop, offsetHeight } = element;
-          if (scrollPosition >= offsetTop - 100 && scrollPosition < offsetTop + offsetHeight - 100) {
+          if (scrollPosition >= offsetTop - 110 && scrollPosition < offsetTop + offsetHeight - 110) {
             setActiveSection(section);
             break;
           }
@@ -157,7 +162,7 @@ I write code.`;
       if (currentRef) {
         // Center the indicator on the selected item
         const itemHeight = currentRef.offsetHeight;
-        const indicatorHeight = 48; // 12 * 4px (h-12)
+        const indicatorHeight = 36; // Icon size is 36px
         setIndicatorPosition(currentRef.offsetTop + (itemHeight / 2) - (indicatorHeight / 2));
       }
     }, 100);
@@ -172,7 +177,7 @@ I write code.`;
       if (currentRef) {
         // Center the indicator on the selected item
         const itemHeight = currentRef.offsetHeight;
-        const indicatorHeight = 48; // 12 * 4px (h-12)
+        const indicatorHeight = 36; // Icon size is 36px
         setIndicatorPosition(currentRef.offsetTop + (itemHeight / 2) - (indicatorHeight / 2));
       }
     }, 100);
@@ -187,7 +192,7 @@ I write code.`;
         // Center the indicator on the first item
         const firstRef = experienceMenuRefs.current[0];
         const itemHeight = firstRef.offsetHeight;
-        const indicatorHeight = 48; // 12 * 4px (h-12)
+        const indicatorHeight = 36; // Icon size is 36px
         setIndicatorPosition(firstRef.offsetTop + (itemHeight / 2) - (indicatorHeight / 2));
       }
     }, 500);
@@ -298,7 +303,7 @@ I write code.`;
       {/* Main content of the portfolio. */}
       <main className="max-w-5xl mx-auto px-6 pt-24">
         {/* Home section with typing animation. */}
-        <section id="home" className="h-screen flex flex-col items-center justify-center">
+        <section id="home" className="h-screen flex flex-col items-center justify-center -mt-24">
           <div className="text-left font-mono text-white text-6xl mb-8">
             <pre className="whitespace-pre-wrap">
               {typingText}
@@ -363,17 +368,23 @@ I write code.`;
           <h2 className="text-cyan-400 font-mono text-2xl mb-12">Work Experience</h2>
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 mx-auto max-w-5xl">
             {/* Experience menu. */}
-            <div className="md:col-span-3 relative">
+            <div className="md:col-span-4 relative">
               <div className="font-mono sticky top-24">
                 <div 
-                  className="absolute w-4 h-8 bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 shadow-lg transition-all duration-500 ease-out transform hover:scale-110 rotate-45" 
+                  className="absolute transition-all duration-500 ease-out transform hover:scale-110" 
                   style={{ 
                     top: `${indicatorPosition}px`, 
-                    left: "-20px",
-                    boxShadow: "0 0 25px rgba(34, 211, 238, 0.6), 0 0 40px rgba(34, 211, 238, 0.3)",
-                    clipPath: "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)"
+                    left: "-24px"
                   }}
-                />
+                >
+                  <ChevronsRight 
+                    size={36} 
+                    className="text-cyan-400 drop-shadow-lg" 
+                    style={{
+                      filter: "drop-shadow(0 0 8px rgba(34, 211, 238, 0.6))"
+                    }}
+                  />
+                </div>
                 {experiences.map((exp, index) => (
                   <div 
                     key={index}
@@ -391,7 +402,7 @@ I write code.`;
               </div>
             </div>
             {/* Experience details. */}
-            <div className="md:col-span-9">
+            <div className="md:col-span-8">
               {experiences.map((exp, index) => (
                 <div 
                   key={index} 
@@ -402,7 +413,7 @@ I write code.`;
                   <div className="mb-4">
                     <h3 className="text-white text-xl font-mono">
                       {exp.position} @ 
-                      <span className="text-cyan-400"> {exp.company}</span>
+                      <span className="text-cyan-400"> {exp.companyFull}</span>
                     </h3>
                     <p className="text-gray-300 font-mono text-sm">{exp.period}</p>
                   </div>
@@ -557,6 +568,11 @@ I write code.`;
         
         .text-shadow {
           text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8), 0 0 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        html {
+          scroll-behavior: smooth;
+          scroll-padding-top: 120px;
         }
       `}</style>
     </div>
