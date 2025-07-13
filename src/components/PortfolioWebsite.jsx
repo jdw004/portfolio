@@ -46,13 +46,14 @@ I write code.`;
       position: 'Software Engineer Intern',
       period: 'January 2025 - April 2025',
       details: [
-        'Engineered user-friendly applications using SwiftUI, focusing on seamless UI/UX and efficient code architecture',
-        'Executed comprehensive testing using Xcode and Android Studio, ensuring high performance and compatibility across iOS and Android ecosystems'
+        'Applied LLM sentiment analysis to song lyrics, scoring a user\'s musical taste on a numerical mood scale from 1-10',
+        'Processed 1000+ songs’ lyrical data from user accounts with Spotify API and parsed the data with pandas',
+        'Delivered song recommendations based on current mood to enhance the user experience',
       ]
     },
     {
       company: 'Auburn HCAI Lab \'24',
-      companyFull: ' AU Human-Centered AI Lab',
+      companyFull: 'Auburn Human-Centered AI Lab',
       position: 'Undergraduate Research Assistant',
       period: 'August 2024 - December 2024',
       details: [
@@ -66,9 +67,9 @@ I write code.`;
       position: 'Software Engineer Intern',
       period: 'June 2024 - August 2024',
       details: [
-        'Developed AWS application deployment manager using Angular and Terraform, decreasing deployment time by 50\%',
-        'Reduced app downtime 30\% by building load balancer for blue-green deployment, enabling updates for 22,000+ advisors',
-        'Decreased yearly meetings 20 hours for Infosec employees by automating notifications for annual reviews using Jira API'
+        'Developed an AWS application deployment manager using Angular and Terraform, decreasing deployment time by 50\%',
+        'Reduced app downtime 30\% by building a load balancer for blue-green deployment, enabling updates for 22,000+ advisors',
+        'Decreased yearly meetings 20 hours for Infosec employees by automating notifications for annual reviews using the Jira API'
       ]
     },
     {
@@ -79,7 +80,7 @@ I write code.`;
       details: [
         'Successfully generated $40,000 in revenue through retail arbitrage tactics as sole proprietor',
         'Developed an e-commerce platform utilizing React and Node.js to effectively display product, process orders, and handle customer relationships',
-        'Implemented an inventory management system to effectively manage daily orders by implementing API routes to query from MongoDB database and display it back to clients'
+        'Implemented an inventory management system to effectively manage daily orders by implementing API routes to query from MongoDB database and display results back to clients'
       ]
     }
   ];
