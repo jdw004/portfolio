@@ -432,7 +432,6 @@ I write code.`;
           </div>
         </section>
 
-        {/* Projects section. */}
         <section id="projects" className="py-16">
           <h2 className="text-cyan-400 font-mono text-2xl mb-12">Projects</h2>
           {projects.map((project, index) => (
@@ -440,12 +439,14 @@ I write code.`;
               <h3 className="text-cyan-400 font-mono text-lg mb-4">
                 <span className="text-white text-xl">{project.name}</span>
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="font-mono text-right md:text-left bg-gray-800 rounded-xl shadow-lg hover:shadow-cyan-400/20 transition-all duration-300 flex items-center justify-center h-48 w-full overflow-hidden">
-                  <img 
-                    src={project.image} 
+              {/* Changed from grid to flex */}
+              <div className="flex flex-col md:flex-row gap-4 justify-between items-center"> 
+                {/* Each item now needs to define its width based on breakpoints */}
+                <div className="font-mono w-70 h-70 text-right md:text-left bg-gray-800 rounded-xl shadow-lg hover:shadow-cyan-400/20 transition items-center overflow-hidden">
+                  <img
+                    src={project.image}
                     alt={`${project.name} interface`}
-                    className="max-w-full max-h-full object-contain mx-auto my-auto transition-transform duration-500 hover:scale-105" 
+                    className="max-w-full max-h-full object-contain mx-auto my-auto transition-transform duration-500 hover:scale-105"
                     loading="lazy"
                     onError={(e) => {
                       e.target.onerror = null;
@@ -460,7 +461,7 @@ I write code.`;
                     }}
                   />
                 </div>
-                <div className="font-mono text-right">
+                <div className="font-mono w-full md:w-1/2 text-left sm:text-right">
                   <p className="text-white mb-4 text-lg">{project.description}</p>
                   <p className="text-gray-300 text-base mb-6">{project.details}</p>
                   <div className="flex flex-wrap justify-end gap-4">
@@ -471,20 +472,20 @@ I write code.`;
                   <div className="mt-3">
                     {project.name === 'Lyric Vibe' ? (
                       <div className="flex gap-4 justify-end">
-                        <a 
-                          href="https://www.youtube.com/watch?v=fyFrPITK4m8" 
-                          target="_blank" 
+                        <a
+                          href="https://www.youtube.com/watch?v=fyFrPITK4m8"
+                          target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-block text-cyan-400 hover:text-white transition-colors duration-300"
+                          className="text-cyan-400 hover:text-white transition"
                           aria-label={`View ${project.name} live demo`}
                         >
                           <SquareArrowOutUpRight size={30} />
                         </a>
-                        <a 
-                          href={`https://github.com/jdw004/${project.name.toLowerCase().replace(' ', '-')}`} 
-                          target="_blank" 
+                        <a
+                          href={`https://github.com/jdw004/${project.name.toLowerCase().replace(' ', '-')}`}
+                          target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-block text-cyan-400 hover:text-white transition-colors duration-300"
+                          className="text-cyan-400 hover:text-white transition"
                           aria-label={`View ${project.name} code on GitHub`}
                         >
                           <Github size={32} />
@@ -492,22 +493,22 @@ I write code.`;
                       </div>
                     ) : project.name === 'Mars Meteo' ? (
                       <div className="flex gap-4 justify-end">
-                        <a 
-                          href={`https://github.com/jdw004/${project.name.toLowerCase().replace(' ', '-')}`} 
-                          target="_blank" 
+                        <a
+                          href={`https://github.com/jdw004/${project.name.toLowerCase().replace(' ', '-')}`}
+                          target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-block text-cyan-400 hover:text-white transition-colors duration-300"
+                          className="text-cyan-400 hover:text-white transition"
                           aria-label={`View ${project.name} code on GitHub`}
                         >
                           <Github size={32} />
                         </a>
                       </div>
                     ) : (
-                      <a 
-                        href={`https://github.com/jdw004/${project.name.toLowerCase().replace(' ', '-')}`} 
-                        target="_blank" 
+                      <a
+                        href={`https://github.com/jdw004/${project.name.toLowerCase().replace(' ', '-')}`}
+                        target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-block text-cyan-400 hover:text-white transition-colors duration-300"
+                        className="text-cyan-400 hover:text-white transition"
                         aria-label={`View ${project.name} code on GitHub`}
                       >
                         <Github size={32} />
