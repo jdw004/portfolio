@@ -450,7 +450,13 @@ I write code.`;
               {/* Changed from grid to flex */}
               <div className="flex flex-col md:flex-row gap-4 justify-between items-center"> 
                 {/* Each item now needs to define its width based on breakpoints */}
-                <div className="font-mono w-70 h-70 text-right md:text-left bg-gray-800 rounded-xl shadow-lg hover:shadow-cyan-400/20 transition items-center overflow-hidden">
+                <a
+                  href={`https://github.com/jdw004/${project.name.toLowerCase().replace(/\s+/g, '-')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-mono w-70 h-70 text-right md:text-left bg-gray-800 rounded-xl shadow-lg hover:shadow-cyan-400/20 transition items-center overflow-hidden cursor-pointer"
+                  aria-label={`View ${project.name} code on GitHub`}
+                >
                   <img
                     src={project.image}
                     alt={`${project.name} interface`}
@@ -468,7 +474,7 @@ I write code.`;
                       `;
                     }}
                   />
-                </div>
+                </a>
                 <div className="font-mono w-full md:w-1/2 text-left sm:text-right">
                   <p className="text-white mb-4 text-lg">{project.description}</p>
                   <p className="text-gray-300 text-base mb-6">{project.details}</p>
@@ -490,7 +496,7 @@ I write code.`;
                           <SquareArrowOutUpRight size={30} />
                         </a>
                         <a
-                          href={`https://github.com/jdw004/${project.name.toLowerCase().replace(' ', '-')}`}
+                          href={`https://github.com/jdw004/${project.name.toLowerCase().replace(/\s+/g, '-')}`}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-cyan-400 hover:text-white transition"
@@ -502,7 +508,7 @@ I write code.`;
                     ) : (
                       <div className="flex gap-4 justify-end">
                         <a
-                          href={`https://github.com/jdw004/${project.name.toLowerCase().replace(' ', '-')}`}
+                          href={`https://github.com/jdw004/${project.name.toLowerCase().replace(/\s+/g, '-')}`}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-cyan-400 hover:text-white transition"
