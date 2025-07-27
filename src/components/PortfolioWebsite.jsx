@@ -4,6 +4,7 @@ import { Github, Linkedin, Mail, Menu, X, SquareArrowOutUpRight, ChevronsRight} 
 // Import project images
 import marsMeteo from '/images/mars-meteo.png';
 import lyricVibe from '/images/lyric-vibe.png';
+import leetExample from '/images/leetcodeLeaderboard.jpg';
 
 // Define the main functional component for the portfolio website.
 const PortfolioWebsite = () => {
@@ -100,6 +101,13 @@ I write code.`;
       description: 'A sentiment analysis project, fetching a user\'s spotify data and quantifying user music taste on a numerical happy-to-sad scale.',
       details: 'Utilized NLTK LLM sentiment analysis to review song lyrics from user accounts, allowing us to recommend songs based on mood.',
       tags: ['Python', 'NLTK', 'pandas', 'Spotify API']
+    },
+    {
+      name: "Leetcode Discord Bot",
+      image: leetExample,
+      description: 'A discord bot for communities to track a group\'s weekly progress on Leetcode',
+      details: 'Built a Discord bot that integrates with LeetCode\'s GraphQL API to track and display coding progress for community members, featuring automated weekly reports and leaderboards.',
+      tags: ['Node.js', 'Express', 'GraphQL', 'PostgreSQL']
     }
   ];
 
@@ -446,7 +454,7 @@ I write code.`;
                   <img
                     src={project.image}
                     alt={`${project.name} interface`}
-                    className="max-w-full max-h-full object-contain mx-auto my-auto transition-transform duration-500 hover:scale-105"
+                    className="max-w-full max-h-full object-fill mx-auto my-auto transition-transform duration-500 hover:scale-105"
                     loading="lazy"
                     onError={(e) => {
                       e.target.onerror = null;
@@ -491,7 +499,7 @@ I write code.`;
                           <Github size={32} />
                         </a>
                       </div>
-                    ) : project.name === 'Mars Meteo' ? (
+                    ) : (
                       <div className="flex gap-4 justify-end">
                         <a
                           href={`https://github.com/jdw004/${project.name.toLowerCase().replace(' ', '-')}`}
@@ -503,16 +511,6 @@ I write code.`;
                           <Github size={32} />
                         </a>
                       </div>
-                    ) : (
-                      <a
-                        href={`https://github.com/jdw004/${project.name.toLowerCase().replace(' ', '-')}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-cyan-400 hover:text-white transition"
-                        aria-label={`View ${project.name} code on GitHub`}
-                      >
-                        <Github size={32} />
-                      </a>
                     )}
                   </div>
                 </div>
