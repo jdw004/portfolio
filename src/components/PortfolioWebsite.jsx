@@ -328,7 +328,7 @@ I write code.`;
             <div className="md:col-span-7">
               <div className="font-mono text-lg leading-relaxed text-white">
                 <p className="mb-4">
-                  Hey, my name is John and I'm a software engineering student at Auburn University. Lately I've been working to leverage <span className="text-cyan-400">artificial intelligence</span> to create a <span className="text-cyan-400">stock analysis tool</span>.
+                  Hey, my name is John and I'm a computer science student at Auburn University. Lately I've been working to leverage <span className="text-cyan-400">artificial intelligence</span> to create a <span className="text-cyan-400">stock analysis tool</span>.
                 </p>
                 <p className="mb-4">
                   To date, I've had the privilege of working as an intern for two summers at <span className="text-cyan-400">LPL Financial</span>, creating AI-driven developer tools, automations, and more. I've also gained valuable experience by researching LLMs at Auburn's Human-Centered AI Lab, creating a <span className="text-cyan-400">5 star iOS application</span> at OCV, and founding my own e-commerce business.
