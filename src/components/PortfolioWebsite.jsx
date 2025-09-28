@@ -5,6 +5,7 @@ import { Github, Linkedin, Mail, Menu, X, SquareArrowOutUpRight, ChevronsRight} 
 import marsMeteo from '/images/mars-meteo.png';
 import lyricVibe from '/images/lyric-vibe.png';
 import leetExample from '/images/leetcodeLeaderboard.jpg';
+import snowPicture from '/images/IMG_5710.jpg';
 
 // Define the main functional component for the portfolio website.
 const PortfolioWebsite = () => {
@@ -351,11 +352,11 @@ I write code.`;
             </div>
             {/* Profile image. */}
             <div className="md:col-span-5 justify-center items-center hidden md:flex">
-              <div className="relative w-56 h-56">
-                <div className="absolute -top-3 -left-3 w-56 h-56 bg-cyan-400 bg-opacity-20 rounded-md transition-all duration-300 hover:translate-x-2 hover:translate-y-2">
+              <div className="relative w-72 h-72">
+                <div className="absolute -top-4 -left-4 w-72 h-72 bg-cyan-400 bg-opacity-20 rounded-md transition-all duration-300 hover:translate-x-3 hover:translate-y-3">
                   <div className="relative w-full h-full overflow-hidden rounded-md">
                     <img
-                      src="/images/profile.jpg"
+                      src="/images/IMG_5710.jpg"
                       alt="John Welch"
                       className="w-full h-full object-cover transition-all duration-500 hover:scale-105"
                       loading="lazy"
