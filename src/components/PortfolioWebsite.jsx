@@ -32,6 +32,24 @@ I write code.`;
   // Data for work experiences.
   const experiences = [
     {
+      company: 'Stripe \'26',
+      companyFull: 'Stripe',
+      position: 'Software Engineer Intern',
+      period: 'January 2026 - Present',
+      details: [
+        'Incoming Winter 2026 Software Engineer Intern'
+      ]
+    },
+    {
+      company: 'Scale AI \'25',
+      companyFull: 'Scale AI',
+      position: 'Gen AI Intern',
+      period: 'October 2025 - January 2026',
+      details: [
+        'LLM Evaluation and Benchmarking'
+      ]
+    },
+    {
       company: 'LPL Financial \'25',
       companyFull: 'LPL Financial',
       position: 'Software Engineer Intern',
@@ -114,12 +132,12 @@ I write code.`;
 
   // List of technologies to display in the about section.
   const technologies = [
-    'Golang', 
+    'C++', 
     'React', 
-    'JavaScript', 
+    'TensorFlow', 
     'Python',
-    'AWS', 
-    'Docker'
+    'LangChain', 
+    'MCP'
   ];
   
   // Effect to handle scroll events and update the active section.
@@ -332,7 +350,7 @@ I write code.`;
                   Hey, my name is John and I'm a computer science student at Auburn University. Lately I've been working to leverage <span className="text-cyan-400">artificial intelligence</span> to create a <span className="text-cyan-400">stock analysis tool</span>.
                 </p>
                 <p className="mb-4">
-                  To date, I've had the privilege of working as an intern for two summers at <span className="text-cyan-400">LPL Financial</span>, creating AI-driven developer tools, automations, and more. I've also gained valuable experience by researching LLMs at Auburn's Human-Centered AI Lab, creating a <span className="text-cyan-400">5 star iOS application</span> at OCV, and founding my own e-commerce business.
+                  I've had the privilege of working as a GenAI intern at <span className="text-cyan-400">Scale AI</span> evaluating next-generation AI models, a software engineering intern for two summers at <span className="text-cyan-400">LPL Financial</span> developing AI-driven developer tools and automations, conducting LLM research at Auburn's Human-Centered AI Lab, building a <span className="text-cyan-400">5 star iOS application</span> at OCV, and founding my own e-commerce business.
                 </p>
                 <p className="mb-6">
                   I have a passion for continually expanding my skill-set, so if you have a project you'd like to collaborate on, please don't hesitate to reach out!
