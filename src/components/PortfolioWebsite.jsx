@@ -46,7 +46,8 @@ I write code.`;
       position: 'Gen AI Intern',
       period: 'October 2025 - January 2026',
       details: [
-        'LLM Evaluation and Benchmarking'
+        'Developed large scale data pipelines to process model outputs, improving reliability of evaluation workflows',
+        'Implemented a fault-tolerant C++ data pipeline handling 8K+ model evaluations daily, reducing failures by 9%'
       ]
     },
     {
