@@ -109,13 +109,6 @@ I write code.`;
   // Data for projects.
   const projects = [
     {
-      name: 'Mars Meteo',
-      image: marsMeteo,
-      description: 'A Mars weather web application with a comprehensive weather tracking dashboard.',
-      details: 'Led a team to develop this application, designed and built a web scraper using JavaScript for active updates of NASA Rover data, and crafted a user-friendly UI using React.',
-      tags: ['React', 'Node.js', 'JavaScript']
-    },
-    {
       name: 'Lyric Vibe',
       image: lyricVibe,
       description: 'A sentiment analysis project, fetching a user\'s spotify data and quantifying user music taste on a numerical happy-to-sad scale.',
@@ -128,6 +121,13 @@ I write code.`;
       description: 'A discord bot for communities to track a group\'s weekly progress on Leetcode',
       details: 'Built a Discord bot that integrates with LeetCode\'s GraphQL API to track and display coding progress for community members, featuring automated weekly reports and leaderboards.',
       tags: ['Node.js', 'Express', 'GraphQL', 'PostgreSQL']
+    },
+    {
+      name: 'Mars Meteo',
+      image: marsMeteo,
+      description: 'A Mars weather web application with a comprehensive weather tracking dashboard.',
+      details: 'Led a team to develop this application, designed and built a web scraper using JavaScript for active updates of NASA Rover data, and crafted a user-friendly UI using React.',
+      tags: ['React', 'Node.js', 'JavaScript']
     }
   ];
 
