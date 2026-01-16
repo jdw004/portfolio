@@ -37,7 +37,7 @@ I write code.`;
       position: 'Software Engineer Intern',
       period: 'January 2026 - Present',
       details: [
-        'Incoming Winter 2026 Software Engineer Intern'
+        'Winter 2026 Software Engineer Intern on Payments Team'
       ]
     },
     {
@@ -67,9 +67,8 @@ I write code.`;
       position: 'Software Engineer Intern',
       period: 'January 2025 - April 2025',
       details: [
-        'Applied LLM sentiment analysis to song lyrics, scoring a user\'s musical taste on a numerical mood scale from 1-10',
-        'Processed 1000+ songs’ lyrical data from user accounts with Spotify API and parsed the data with pandas',
-        'Delivered song recommendations based on current mood to enhance the user experience',
+        'Engineered iOS app for county court using SwiftUI, achieving 1,000+ downloads & five stars on the App Store',
+        'Shortened infrastructure setup time 70% by deploying serverless application backend using AWS Amplify'
       ]
     },
     {
@@ -100,8 +99,7 @@ I write code.`;
       period: 'August 2021 - May 2023',
       details: [
         'Successfully generated $40,000 in revenue through retail arbitrage tactics as sole proprietor',
-        'Developed an e-commerce platform utilizing React and Node.js to effectively display product, process orders, and handle customer relationships',
-        'Implemented an inventory management system to effectively manage daily orders by implementing API routes to query from MongoDB database and display results back to clients'
+        'Implemented a REST API to support CRUD operations for inventory management data stored in MongoDB'
       ]
     }
   ];
@@ -134,11 +132,11 @@ I write code.`;
   // List of technologies to display in the about section.
   const technologies = [
     'C++', 
-    'React', 
-    'TensorFlow', 
-    'Python',
+    'Java', 
+    'gRPC', 
+    'MCP',
     'LangChain', 
-    'MCP'
+    'Python'
   ];
   
   // Effect to handle scroll events and update the active section.
@@ -351,7 +349,7 @@ I write code.`;
                   Hey, my name is John and I'm a computer science student at Auburn University. Lately I've been working to leverage <span className="text-cyan-400">artificial intelligence</span> to create a <span className="text-cyan-400">stock analysis tool</span>.
                 </p>
                 <p className="mb-4">
-                  I've had the privilege of working as a GenAI intern at <span className="text-cyan-400">Scale AI</span> evaluating next-generation AI models, a software engineering intern for two summers at <span className="text-cyan-400">LPL Financial</span> developing AI-driven developer tools and automations, conducting LLM research at Auburn's Human-Centered AI Lab, building a <span className="text-cyan-400">5 star iOS application</span> at OCV, and founding my own e-commerce business.
+                  I've had the privilege of working as a GenAI intern at <span className="text-cyan-400">Scale AI</span> evaluating next-generation AI models, a software engineering intern for two summers at <span className="text-cyan-400">LPL Financial</span> developing AI-driven developer tools and automations, conducting LLM research at Auburn's Human-Centered AI Lab, building a 5 star iOS application at OCV, and founding my own e-commerce business.
                 </p>
                 <p className="mb-6">
                   I have a passion for continually expanding my skill-set, so if you have a project you'd like to collaborate on, please don't hesitate to reach out!
