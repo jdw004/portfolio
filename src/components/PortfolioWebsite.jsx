@@ -37,7 +37,8 @@ I write code.`;
       position: 'Software Engineer Intern',
       period: 'January 2026 - Present',
       details: [
-        'Winter 2026 Software Engineer Intern on Payments Team'
+        'Designed temporary deploy system to prevent stale firmware, reducing failure by 25% across 100,000+ payment devices',
+        'Built automated agent to resolve 20+ on-call pages by searching runbooks and querying logs for root causes'
       ]
     },
     {
@@ -131,12 +132,10 @@ I write code.`;
 
   // List of technologies to display in the about section.
   const technologies = [
+    'Golang',
     'C++', 
-    'Java', 
     'gRPC', 
-    'MCP',
-    'LangChain', 
-    'Python'
+    'MCP'
   ];
   
   // Effect to handle scroll events and update the active section.
@@ -349,7 +348,7 @@ I write code.`;
                   Hey, my name is John and I'm a computer science student at Auburn University. Lately I've been working to leverage <span className="text-cyan-400">artificial intelligence</span> to create a <span className="text-cyan-400">stock analysis tool</span>.
                 </p>
                 <p className="mb-4">
-                  I've had the privilege of working as a GenAI intern at <span className="text-cyan-400">Scale AI</span> evaluating next-generation AI models, a software engineering intern for two summers at <span className="text-cyan-400">LPL Financial</span> developing AI-driven developer tools and automations, conducting LLM research at Auburn's Human-Centered AI Lab, building a 5 star iOS application at OCV, and founding my own e-commerce business.
+                  My experience ranges from optimizing firmware deployments at <span className="text-cyan-400">Stripe</span> and evaluating AI models at <span className="text-cyan-400">Scale AI</span> to building developer tools at <span className="text-cyan-400">LPL Financial</span>. Additionally, I've conducted LLM research at Auburn, developed a 5 star iOS app at OCV, and founded an e-commerce business.
                 </p>
                 <p className="mb-6">
                   I have a passion for continually expanding my skill-set, so if you have a project you'd like to collaborate on, please don't hesitate to reach out!
