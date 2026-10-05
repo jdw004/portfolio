@@ -10,7 +10,7 @@ const sections = [
 ];
 
 const navigation = [
-  { id: 'about', label: 'Home', href: '/#about' },
+  { id: 'about', label: 'Home', href: '/' },
   { id: 'graph', label: 'Knowledge Graph', href: '/graph/' },
 ];
 
@@ -54,6 +54,16 @@ function Header({ isGraphPage }) {
   const headerRef = useRef(null);
   const menuButtonRef = useRef(null);
   const isActive = (id) => isGraphPage ? id === 'graph' : id === 'about';
+  const handleHomeClick = (event) => {
+    if (isGraphPage || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}`);
+    window.scrollTo({
+      top: 0,
+      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+    });
+    setMenuOpen(false);
+  };
   useEffect(() => {
     if (!menuOpen) return;
     const onOutsideClick = (event) => {
@@ -83,14 +93,14 @@ function Header({ isGraphPage }) {
       <div className="header-spacer" />
       <header className="site-header" ref={headerRef}>
         <div className="header-inner">
-          <a className="site-logo" href="/#about" aria-label="John Welch home">{'</>'}</a>
-          <nav className="desktop-nav" aria-label="Main navigation">{navigation.map((section) => <a key={section.id} href={section.href} className={isActive(section.id) ? 'nav-active' : undefined} aria-current={isActive(section.id) ? 'page' : undefined}>{section.label}</a>)}</nav>
+          <a className="site-logo" href="/" onClick={handleHomeClick} aria-label="John Welch home">{'</>'}</a>
+          <nav className="desktop-nav" aria-label="Main navigation">{navigation.map((section) => <a key={section.id} href={section.href} onClick={section.id === 'about' ? handleHomeClick : undefined} className={isActive(section.id) ? 'nav-active' : undefined} aria-current={isActive(section.id) ? 'page' : undefined}>{section.label}</a>)}</nav>
           <button ref={menuButtonRef} className="menu-button" type="button" aria-label={menuOpen ? 'Close navigation' : 'Open navigation'} aria-expanded={menuOpen} aria-controls="mobile-navigation" onClick={() => setMenuOpen((open) => !open)}>
             {menuOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
           </button>
         </div>
         <nav id="mobile-navigation" className="mobile-nav" aria-label="Mobile navigation" hidden={!menuOpen}>
-          {navigation.map((section) => <a key={section.id} href={section.href} className={isActive(section.id) ? 'nav-active' : undefined} aria-current={isActive(section.id) ? 'page' : undefined} onClick={() => setMenuOpen(false)}>{section.label}</a>)}
+          {navigation.map((section) => <a key={section.id} href={section.href} className={isActive(section.id) ? 'nav-active' : undefined} aria-current={isActive(section.id) ? 'page' : undefined} onClick={(event) => { if (section.id === 'about') handleHomeClick(event); setMenuOpen(false); }}>{section.label}</a>)}
         </nav>
       </header>
     </>
