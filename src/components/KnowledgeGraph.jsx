@@ -15,7 +15,7 @@ export default function KnowledgeGraph() {
 
   useEffect(() => {
     const controller = new AbortController();
-    fetch('/graph-data.json', { signal: controller.signal })
+    fetch('/assets/content/knowledge/network.json', { signal: controller.signal })
       .then((response) => {
         if (!response.ok) throw new Error('Graph data unavailable');
         return response.json();
