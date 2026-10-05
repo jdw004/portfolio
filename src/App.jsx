@@ -1,4 +1,4 @@
-import PortfolioWebsite from "./components/portfoliowebsite.jsx";
+import PortfolioWebsite from "./components/PortfolioWebsite.jsx";
 
 function App() {
   return <PortfolioWebsite />;
