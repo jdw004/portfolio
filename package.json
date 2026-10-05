@@ -16,6 +16,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "force-graph": "^1.52.0",
     "gh-pages": "^6.3.0",
     "postcss-cli": "^11.0.1",
     "react": "^19.0.0",
