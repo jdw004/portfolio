@@ -16,11 +16,8 @@
     { "id": "cloud", "title": "Cloud infrastructure" },
     { "id": "observability", "title": "Observability" },
     { "id": "security", "title": "Infrastructure security" },
-    { "id": "multi-agent", "title": "Multi-agent systems" },
     { "id": "tools", "title": "Tool-using agents" },
-    { "id": "workflows", "title": "Workflow automation" },
     { "id": "memory", "title": "Agent memory" },
-    { "id": "planning", "title": "Agent planning" },
     { "id": "order-book", "title": "Order books" },
     { "id": "execution", "title": "Trading infrastructure" },
     { "id": "backtesting", "title": "Backtesting" }
@@ -37,11 +34,8 @@
     { "source": "infra", "target": "cloud" },
     { "source": "infra", "target": "observability" },
     { "source": "infra", "target": "security" },
-    { "source": "agents", "target": "multi-agent" },
     { "source": "agents", "target": "tools" },
-    { "source": "agents", "target": "workflows" },
     { "source": "agents", "target": "memory" },
-    { "source": "agents", "target": "planning" },
     { "source": "quant", "target": "order-book" },
     { "source": "quant", "target": "execution" },
     { "source": "quant", "target": "backtesting" },
@@ -54,10 +48,7 @@
     { "source": "inference", "target": "cloud" },
     { "source": "distributed", "target": "databases" },
     { "source": "security", "target": "tools" },
-    { "source": "multi-agent", "target": "planning" },
-    { "source": "multi-agent", "target": "workflows" },
     { "source": "tools", "target": "apis" },
-    { "source": "planning", "target": "memory" },
     { "source": "order-book", "target": "execution" }
   ]
 }
