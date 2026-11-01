@@ -1,0 +1,38 @@
+.internship-map { min-width:0; }
+.internship-map-instructions { margin-bottom:1rem; color:var(--muted); font-size:.9rem; }
+.internship-map-figure { margin:0; padding:1rem; border:1px solid var(--border); border-radius:.75rem; background:var(--surface); }
+.internship-map-surface { position:relative; }
+.internship-map-svg { display:block; width:100%; height:auto; overflow:visible; }
+.internship-map-state { fill:#e3e5dc; stroke:var(--surface); stroke-width:1; stroke-linejoin:round; vector-effect:non-scaling-stroke; transition:fill .15s ease; }
+.internship-map-state.has-internship { fill:var(--blue-border); cursor:pointer; -webkit-tap-highlight-color:transparent; }
+.internship-map-state:focus { outline:none; }
+.internship-map-state.has-internship:hover,.internship-map-state.is-selected { fill:var(--blue); }
+.internship-map-state:focus-visible { fill:var(--blue); stroke:var(--text); stroke-width:2; }
+.internship-map-logo { --marker-width:28px; position:absolute; left:var(--marker-x); transform:translate(-50%,-100%); width:44px; height:44px; padding:0; border:0; outline:none; background:transparent; cursor:pointer; -webkit-tap-highlight-color:transparent; }
+.internship-map-logo::before { content:""; position:absolute; bottom:0; left:calc(50% - .5px); width:1px; height:12px; background:var(--blue-border); }
+.internship-map-logo::after { content:""; position:absolute; bottom:-3.5px; left:calc(50% - 3.5px); width:7px; height:7px; border:1px solid var(--surface); border-radius:50%; background:var(--blue); box-shadow:0 0 0 1px rgb(23 26 23 / 15%); }
+.internship-map-logo-badge { position:absolute; left:50%; bottom:10px; transform:translateX(-50%); display:flex; align-items:center; justify-content:center; width:var(--marker-width); height:28px; padding:5px; border:1px solid #d8dad1; border-radius:7px; background:#fff; box-shadow:0 1px 4px rgb(20 25 20 / 12%); transition:box-shadow .15s ease,border-color .15s ease; }
+.internship-map-logo img { display:block; width:100%; height:100%; object-fit:contain; pointer-events:none; }
+.internship-map-logo--stripe { --marker-width:42px; }
+.internship-map-logo--lpl .internship-map-logo-badge { padding:1px; overflow:hidden; }
+.internship-map-logo:hover .internship-map-logo-badge,.internship-map-logo[aria-expanded="true"] .internship-map-logo-badge { border-color:var(--blue); box-shadow:0 2px 6px rgb(20 25 20 / 18%); }
+.internship-map-logo:focus-visible .internship-map-logo-badge { outline:2px solid var(--blue); outline-offset:3px; }
+.internship-map-tooltip { position:absolute; z-index:5; width:304px; max-width:calc(100% - 16px); max-height:calc(100% - 16px); overflow:auto; padding:1rem; border:1px solid var(--border-strong); border-radius:.65rem; background:var(--surface); box-shadow:0 8px 28px rgb(20 25 20 / 15%); color:var(--text); overflow-wrap:break-word; animation:map-preview-in .14s ease-out; }
+@keyframes map-preview-in { from { opacity:0; } to { opacity:1; } }
+.internship-map-tooltip-state { color:var(--blue); font-size:.75rem; font-weight:600; margin-bottom:.5rem; padding-right:1.5rem; }
+.internship-map-tooltip-company { font-size:.95rem; font-weight:600; }
+.internship-map-tooltip-company span { color:var(--muted); font-size:.8rem; font-weight:400; }
+.internship-map-tooltip-meta { color:var(--muted-light); font-size:.75rem; margin-top:.25rem; }
+.internship-map-tooltip-summary { font-size:.85rem; margin-top:.6rem; }
+.internship-map-tooltip-entry+.internship-map-tooltip-entry { border-top:1px solid var(--border); padding-top:.75rem; margin-top:.75rem; }
+.internship-map-close { position:absolute; top:0; right:0; width:44px; height:44px; border:0; border-radius:.65rem; background:transparent; color:var(--muted); font:inherit; font-size:1.35rem; cursor:pointer; }
+.internship-map-close:hover { color:var(--blue); }
+.internship-map-close:focus-visible { outline:2px solid var(--blue); outline-offset:-4px; }
+@media (min-width:680px) and (max-width:899px) {
+  .internship-map-tooltip { width:280px; padding:.85rem; }
+}
+@media (max-width:679px) {
+  .internship-map-figure { padding:.5rem; }
+  .internship-map-tooltip { position:fixed; top:auto!important; left:1rem!important; right:1rem; bottom:max(1rem,env(safe-area-inset-bottom)); width:auto; max-width:none; max-height:min(60dvh,26rem); padding:1.1rem; box-shadow:0 8px 36px rgb(20 25 20 / 20%); }
+}
+@media (prefers-reduced-motion:reduce) { .internship-map-tooltip { animation:none; } }

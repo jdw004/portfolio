@@ -1,0 +1,10 @@
+.bonus-screen { display:flex; flex-direction:column; align-items:center; gap:1.75rem; padding:3.5rem 2rem; border:1px solid #494052; border-radius:.5rem; background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgb(255 255 255 / 2%) 3px,rgb(255 255 255 / 2%) 4px),#1a1a1a; color:#eee; text-align:center; }
+.bonus-score,.bonus-return { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; }
+.bonus-controller { color:#aa87ff; }
+.bonus-screen h1 { max-width:11em; font-size:clamp(2rem,6vw,3.5rem); }
+.bonus-screen p { max-width:28rem; color:#bbb; }
+.bonus-score { display:flex; flex-wrap:wrap; justify-content:center; gap:.75rem 2rem; width:100%; padding:1rem 0; border-block:1px solid #3b3543; font-size:.85rem; }
+.bonus-score strong { color:#aa87ff; }
+.bonus-return { display:inline-flex; align-items:center; justify-content:center; gap:1rem; min-height:44px; padding:.65rem 1rem; border:1px solid #aa87ff; border-radius:4px; color:#d4c2ff; font-size:.85rem; }
+.bonus-return:hover { background:#33283f; color:#fff; }
+.bonus-return:focus-visible { outline:2px solid #aa87ff; outline-offset:4px; }

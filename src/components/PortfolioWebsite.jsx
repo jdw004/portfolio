@@ -1,6 +1,10 @@
 import { lazy, Suspense, useEffect, useRef, useState } from 'react';
 import { Github, Linkedin, Mail, Menu, X } from 'lucide-react';
-import { homeMetadata, graphMetadata } from '../data/siteMetadata';
+import SecretKeypad from './SecretKeypad';
+import { experiences } from '../data/experiences';
+import { homeMetadata, graphMetadata, mapMetadata, easterEggMetadata } from '../data/siteMetadata';
+const EasterEgg = lazy(() => import('./EasterEgg'));
+const InternshipMap = lazy(() => import('./InternshipMap'));
 const KnowledgeGraph = lazy(() => import('./KnowledgeGraph'));
 
 const sections = [
@@ -11,16 +15,8 @@ const sections = [
 
 const navigation = [
   { id: 'about', label: 'Home', href: '/' },
+  { id: 'map', label: 'Career Map', href: '/map/' },
   { id: 'graph', label: 'Knowledge Graph', href: '/graph/' },
-];
-
-const experiences = [
-  { company: 'Apple', href: 'https://www.apple.com/apple-pay/', role: 'Software Engineer Intern', dates: 'May 2026 - Aug 2026', summary: 'Built agents for Apple Pay.', current: true },
-  { company: 'Stripe', href: 'https://stripe.com/terminal', role: 'Software Engineer Intern', dates: 'Jan 2026 - May 2026', summary: 'Built infrastructure powering Stripe Terminal.' },
-  { company: 'Scale AI', href: 'https://scale.com/', role: 'Gen AI Intern', dates: 'Oct 2025 - Jan 2026', summary: 'Evaluated the next generation of large language models.' },
-  { company: 'LPL Financial', href: 'https://www.lpl.com/', role: 'Software Engineer Intern', dates: 'Jun 2025 - Aug 2025', summary: 'Built an MCP server connecting coding agents to Jira, turning user stories into code.' },
-  { company: 'Auburn HC-AI Lab', role: 'Undergraduate Research Assistant', dates: 'Aug 2024 - Nov 2024', summary: 'Conducted research in Auburn’s Human-Centered AI Laboratory.' },
-  { company: 'LPL Financial', href: 'https://www.lpl.com/', role: 'Software Engineer Intern', dates: 'Jun 2024 - Aug 2024', summary: 'Built developer tools and automation for engineering teams.' },
 ];
 
 function SectionRail() {
@@ -49,13 +45,13 @@ function SectionRail() {
   );
 }
 
-function Header({ isGraphPage }) {
+function Header({ page }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const headerRef = useRef(null);
   const menuButtonRef = useRef(null);
-  const isActive = (id) => isGraphPage ? id === 'graph' : id === 'about';
+  const isActive = (id) => id === page;
   const handleHomeClick = (event) => {
-    if (isGraphPage || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    if (page !== 'about' || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
     event.preventDefault();
     window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}`);
     window.scrollTo({
@@ -121,8 +117,11 @@ function Timeline() {
 
 export default function PortfolioWebsite() {
   const isGraphPage = /^\/graph\/?$/.test(window.location.pathname);
+  const isMapPage = /^\/map\/?$/.test(window.location.pathname);
+  const isEasterEggPage = /^\/easter-egg\/?$/.test(window.location.pathname);
+  const page = isGraphPage ? 'graph' : isMapPage ? 'map' : isEasterEggPage ? 'easter-egg' : 'about';
   useEffect(() => {
-    const metadata = isGraphPage ? graphMetadata : homeMetadata;
+    const metadata = isGraphPage ? graphMetadata : isMapPage ? mapMetadata : isEasterEggPage ? easterEggMetadata : homeMetadata;
     document.title = metadata.title;
     const entries = {
       'meta[name="description"]': metadata.description,
@@ -136,12 +135,16 @@ export default function PortfolioWebsite() {
       document.querySelector(selector)?.setAttribute('content', content);
     });
     document.querySelector('link[rel="canonical"]')?.setAttribute('href', metadata.url);
-  }, [isGraphPage]);
+  }, [isGraphPage, isMapPage, isEasterEggPage]);
   return <div className="portfolio-shell">
-    <Header isGraphPage={isGraphPage} />
-    {!isGraphPage && <SectionRail />}
+    <Header page={page} />
+    {page === 'about' && <SectionRail />}
     <main className="site-main">
-      {isGraphPage ? <section className="page-section hero-section">
+      {isEasterEggPage ? <Suspense fallback={<p>Loading bonus level…</p>}><EasterEgg /></Suspense> : isMapPage ? <section className="page-section hero-section">
+        <h1>Career Map</h1>
+        <Suspense fallback={<p>Loading map…</p>}><InternshipMap /></Suspense>
+        <SecretKeypad />
+      </section> : isGraphPage ? <section className="page-section hero-section">
         <h1>Knowledge Graph</h1>
         <p className="section-intro">My personal knowledge graph, built with Obsidian and visualized.</p>
         <Suspense fallback={<p>Loading graph…</p>}><KnowledgeGraph /></Suspense>
