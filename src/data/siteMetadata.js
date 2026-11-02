@@ -1,5 +1,5 @@
 export const homeMetadata = {
-  title: 'John Welch | Software Engineer',
+  title: 'John Welch',
   description: 'John Welch is a software engineer and computer science student at Auburn University interested in applied AI systems and backend infrastructure.',
   url: 'https://www.john-welch.dev/',
 };

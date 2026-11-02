@@ -13,7 +13,9 @@ export default defineConfig({
         if (index?.type === 'asset') {
           for (const [page, metadata] of [['graph', graphMetadata], ['map', mapMetadata], ['easter-egg', easterEggMetadata]]) {
             const source = String(index.source)
-              .replaceAll(homeMetadata.title, metadata.title)
+              .replaceAll(`<title>${homeMetadata.title}</title>`, `<title>${metadata.title}</title>`)
+              .replaceAll(`property="og:title" content="${homeMetadata.title}"`, `property="og:title" content="${metadata.title}"`)
+              .replaceAll(`name="twitter:title" content="${homeMetadata.title}"`, `name="twitter:title" content="${metadata.title}"`)
               .replaceAll(homeMetadata.description, metadata.description)
               .replaceAll(`content="${homeMetadata.url}"`, `content="${metadata.url}"`)
               .replaceAll(`href="${homeMetadata.url}"`, `href="${metadata.url}"`);
