@@ -11,13 +11,13 @@ export const graphMetadata = {
 };
 
 export const mapMetadata = {
-  title: 'Career Map | John Welch',
-  description: 'Explore John Welch’s work across the United States, with details about each company, role, and experience.',
+  title: 'Career Map',
+  description: 'Explore my work across the United States, with details about each company, role, and experience.',
   url: 'https://www.john-welch.dev/map/',
 };
 
 export const easterEggMetadata = {
-  title: 'Bonus Level | John Welch',
-  description: 'A hidden corner of John Welch’s website. Curiosity rewarded.',
+  title: 'Bonus Level',
+  description: 'A hidden bonus level. Curiosity rewarded.',
   url: 'https://www.john-welch.dev/easter-egg/',
 };
